@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "earlyMembers": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['uid', 'name', 'email', 'status', 'createdAt']) && newData.child('uid').val() === auth.uid",
+        "uid": { ".validate": "newData.isString() && newData.val() === auth.uid" },
+        "name": { ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 100" },
+        "email": { ".validate": "newData.isString() && newData.val() === auth.token.email" },
+        "status": { ".validate": "newData.val() === 'early_access'" },
+        "createdAt": { ".validate": "newData.isNumber()" },
+        "source": { ".validate": "newData.isString() && newData.val() === 'paddy-me-early-access'" },
+        "$other": { ".validate": false }
+      }
+    }
+  }
+}

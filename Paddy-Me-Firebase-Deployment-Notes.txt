@@ -1,0 +1,32 @@
+PADDY ME EARLY MEMBERSHIP — DEPLOYMENT NOTES
+
+Files
+- Paddy-Me-early-membership-firebase.html: patched landing page, Firebase Authentication and waitlist write.
+- Paddy-Me-Realtime-Database-Rules.json: restrictive Realtime Database rules for earlyMembers/{uid}.
+
+Firebase configuration preserved exactly as supplied:
+- authDomain: pay-adec1.firebaseapp.com
+- databaseURL: https://pay-adec1-default-rtdb.firebaseio.com
+- projectId: pay-adec1
+- storageBucket: pay-adec1.firebasestorage.app
+- messagingSenderId: 626809294731
+- appId: 1:626809294731:web:6072444c9f1f1bf19ae98e
+- measurementId: G-20GBJEVGVC
+
+REQUIRED BEFORE LIVE DEPLOYMENT
+1. In Firebase Console > Authentication > Sign-in method, enable Email/Password.
+2. In Authentication > Settings > Authorized domains, add the exact production domain (and localhost only if needed for local development).
+3. In Realtime Database > Rules, review and publish the contents of Paddy-Me-Realtime-Database-Rules.json. Without these rules, waitlist writes may be denied or the database may be insecure if currently open.
+4. Test using the deployed HTTPS site: create a test account, confirm a record appears at earlyMembers/{the user's UID}, sign out, sign back in, refresh while signed in, and try a duplicate registration.
+5. Confirm the database is in the expected Firebase project and that production rules are published. Never use open public database rules such as .read: true or .write: true.
+6. Configure Firebase email/password protections and abuse controls appropriate to your release. Consider adding email verification and a trusted backend/admin process before granting any privileged access.
+
+IMPORTANT SECURITY NOTES
+- Firebase web configuration values, including the API key, are identifiers used by the client SDK; they are not server-side secrets. Security must be enforced by Authentication and database rules.
+- The HTML page does not include an admin waitlist viewer. Each signed-in user can read/write only their own earlyMembers/{uid} record under the supplied rules. Admin access should be implemented separately with trusted server-side privileges, never by putting admin credentials in the HTML.
+- A failed Realtime Database write after successful account creation is reported distinctly. The account can exist in Authentication even if its waitlist record was not saved; do not ask that user to register again. After fixing rules/network, signing in retries the record check and creates a missing record without overwriting an existing record.
+- The dashboard still contains placeholder/coming-soon product statistics and links; this patch does not implement payments, transactions, subscriptions, payouts, or other listed product services.
+- Firebase Analytics was intentionally not initialized by this auth flow, avoiding analytics initialization failures from blocking authentication. The measurementId remains preserved in the configuration.
+
+TEST STATUS
+Static file checks only. No live Firebase sign-up/sign-in or database write was executed from this environment, so live integration must be verified on the actual hosted domain before production.
