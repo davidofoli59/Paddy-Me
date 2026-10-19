@@ -1,0 +1,1530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b4f6c">
+<title>Paddy Me — Enterprise Platform, Hosting & Developer Portal</title>
+<meta name="description" content="Paddy Me: Enterprise developer and business operating system for Web2App transformation, Image-to-App synthesis, VPN software builds, and cloud infrastructure.">
+
+<style>
+:root{
+  --ink:#142238;
+  --ink2:#1e293b;
+  --gold:#ffb81c;
+  --gold-glow:rgba(255,184,28,0.32);
+  --seablue:#0b4f6c;
+  --seablue-deep:#082d3e;
+  --skyblue:#0284c7;
+  --skyblue-light:#e0f2fe;
+  --skyblue-glow:rgba(2,132,199,0.25);
+  --neon-white:#fdfeff;
+  --neon-glow:0 0 14px rgba(255,255,255,0.7);
+  --bg-grey:#edf2f7;
+  --bg-grey-border:#dbe3ec;
+  --muted:#5a6e85;
+  --line:#e2e8f0;
+  --paper:#f8fafc;
+  --white:#fff;
+  --radius:22px;
+  --shadow:0 24px 55px -12px rgba(11,79,108,0.12);
+  --spring:cubic-bezier(0.16, 1, 0.3, 1);
+  --smooth:cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{width:min(1200px,calc(100% - 44px));margin-inline:auto}
+
+/* Brand Wordmark & Image Logo */
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.brand-logo-img{height:34px;max-width:140px;object-fit:contain}
+.brand-wordmark{font-size:27px;font-weight:900;letter-spacing:-1.2px;color:var(--ink);white-space:nowrap;line-height:1.1}
+.brand-wordmark b{color:#e9a300}
+
+/* Header & Nav */
+.top{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid rgba(226,232,240,0.9);
+  transition:all 0.35s var(--smooth);
+}
+header{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav{display:flex;align-items:center;gap:10px}
+.navlinks{display:flex;gap:20px;align-items:center;margin-right:12px}
+.navlinks a,.footer-links a{
+  font-size:13.5px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+  transition:color .25s var(--smooth),transform .25s var(--smooth);
+}
+.navlinks a:hover,.footer-links a:hover{color:var(--skyblue);transform:translateY(-1px)}
+
+/* Professional Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border-radius:12px;
+  padding:12px 20px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:750;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform 0.28s var(--spring),box-shadow 0.28s var(--spring),background 0.25s var(--smooth),border-color 0.25s var(--smooth);
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(0.975)}
+.btn-gold{background:var(--gold);color:#172234;box-shadow:0 8px 24px var(--gold-glow)}
+.btn-gold:hover{background:#ffc233;box-shadow:0 14px 34px rgba(255,184,28,0.48)}
+.btn-light{background:#fff;border-color:#cbd5e1;color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,0.03)}
+.btn-light:hover{border-color:var(--skyblue);background:#fcfdfe}
+.btn-sky{background:var(--skyblue);color:#fff;box-shadow:0 8px 24px var(--skyblue-glow)}
+.btn-sky:hover{background:#0369a1;color:#fff}
+
+/* Hero */
+.hero{
+  position:relative;
+  isolation:isolate;
+  padding:100px 0 92px;
+  background:radial-gradient(ellipse at 50% -10%,#ffffff 0%,#f0f6fa 65%,var(--bg-grey) 100%);
+  text-align:center;
+  overflow:hidden;
+}
+.hero:before,.hero:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.42;
+  pointer-events:none;
+  animation:ambientShift 16s ease-in-out infinite alternate;
+}
+.hero:before{top:-260px;left:-160px;background:radial-gradient(circle,#ffd76d,transparent 68%)}
+.hero:after{right:-160px;bottom:-280px;background:radial-gradient(circle,#7dd3fc,transparent 68%);animation-delay:-8s}
+@keyframes ambientShift{
+  0%{transform:translate(0,0) scale(1)}
+  100%{transform:translate(45px,35px) scale(1.12)}
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#fff7df;
+  color:#775300;
+  border:1px solid #ffe5a0;
+  border-radius:99px;
+  padding:8px 18px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.07em;
+  box-shadow:0 4px 14px rgba(255,184,28,0.16);
+  animation:floatSoft 5s ease-in-out infinite;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#e8a500;
+  box-shadow:0 0 0 5px #ffcf5638;
+  animation:pulseSoft 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulseSoft{
+  0%,100%{box-shadow:0 0 0 5px #ffcf5638}
+  50%{box-shadow:0 0 0 11px #ffcf5606}
+}
+@keyframes floatSoft{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+
+h1{
+  font-size:clamp(38px,6vw,72px);
+  line-height:1.06;
+  letter-spacing:-.05em;
+  max-width:980px;
+  margin:25px auto 20px;
+  animation:fadeSpring 0.85s var(--spring) both;
+}
+h1 span,.accent{color:#e9a300}
+.lead{
+  font-size:clamp(16px,1.9vw,20px);
+  line-height:1.8;
+  color:var(--muted);
+  max-width:860px;
+  margin:0 auto 32px;
+  animation:fadeSpring 0.85s 0.12s var(--spring) both;
+}
+@keyframes fadeSpring{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.fine{font-size:12.5px;color:var(--muted);margin-top:18px}
+.status{display:none;max-width:650px;margin:17px auto 0;padding:12px 15px;border-radius:12px;background:#fff4d6;color:#755200;font-size:14px}
+.status.show{display:block}
+.trustline{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;color:#334155;font-size:12.5px;font-weight:650;margin-top:34px}
+.trustline span:before{content:"✓";color:#0284c7;font-weight:900;margin-right:8px}
+
+/* Alternating Section Colors */
+.section{padding:84px 0}
+.section-white{background:#fff;border-block:1px solid var(--line)}
+.section-grey{background:var(--bg-grey);border-block:1px solid var(--bg-grey-border)}
+.section-head{text-align:center;max-width:820px;margin:0 auto 38px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#b07c00;font-weight:850;margin:0 0 10px}
+.section h2{font-size:clamp(28px,4vw,43px);line-height:1.14;letter-spacing:-.035em;margin:0 0 13px}
+.sub{color:var(--muted);font-size:16px;margin:0}
+
+/* Cards & Grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px 26px;
+  box-shadow:0 8px 26px rgba(11,79,108,0.04);
+  transition:transform .32s var(--spring),border-color .32s var(--smooth),box-shadow .32s var(--spring);
+}
+.card:hover{transform:translateY(-8px);border-color:#38bdf8;box-shadow:var(--shadow)}
+.icon{
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  background:#fff3cf;
+  color:#9b6b00;
+  display:grid;
+  place-items:center;
+  font-size:23px;
+  margin-bottom:20px;
+  transition:transform 0.3s var(--spring);
+}
+.card:hover .icon{transform:scale(1.1) rotate(4deg)}
+.card h3{font-size:18px;line-height:1.25;margin:0 0 9px}
+.card p{font-size:14px;color:var(--muted);line-height:1.7;margin:0}
+.text-link{display:inline-flex;margin-top:18px;text-decoration:none;color:var(--skyblue);font-size:13px;font-weight:800}
+.text-link:hover{text-decoration:underline}
+
+/* Sea Blue Feature Panel */
+.feature-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.feature-panel{
+  border-radius:26px;
+  background:linear-gradient(145deg,var(--seablue-deep),var(--seablue));
+  color:var(--neon-white);
+  padding:38px;
+  position:relative;
+  overflow:hidden;
+  min-height:300px;
+  box-shadow:0 22px 50px rgba(11,79,108,0.25);
+}
+.feature-panel:after{
+  content:"";
+  position:absolute;
+  right:-95px;
+  bottom:-130px;
+  width:290px;
+  height:290px;
+  border:1px solid rgba(56,189,248,0.25);
+  border-radius:50%;
+  box-shadow:0 0 0 24px rgba(255,255,255,0.04),0 0 0 50px rgba(56,189,248,0.05);
+}
+.feature-panel h3{font-size:26px;line-height:1.22;max-width:440px;margin:0 0 14px;position:relative;z-index:1;text-shadow:var(--neon-glow)}
+.feature-panel p{color:#e0f2fe;max-width:450px;font-size:14px;line-height:1.8;position:relative;z-index:1}
+.feature-panel .tag{
+  display:inline-flex;
+  border:1px solid #38bdf8;
+  border-radius:99px;
+  padding:7px 12px;
+  font-size:11px;
+  color:#38bdf8;
+  background:rgba(56,189,248,0.12);
+  margin-bottom:22px;
+  position:relative;
+  z-index:1;
+  font-weight:800;
+  letter-spacing:.05em;
+}
+.feature-list{display:grid;gap:14px}
+.feature-row{
+  display:flex;
+  gap:16px;
+  padding:20px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  transition:transform .28s var(--spring),border-color .25s var(--smooth),box-shadow .28s var(--spring);
+}
+.feature-row:hover{transform:translateX(6px);border-color:#38bdf8;box-shadow:0 10px 28px rgba(11,79,108,0.06)}
+.check{flex:0 0 28px;width:28px;height:28px;border-radius:99px;background:#e0f2fe;color:var(--skyblue);display:grid;place-items:center;font-weight:900}
+.feature-row h3{font-size:15px;margin:0 0 4px}
+.feature-row p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+
+/* Hosting Features Grid */
+.hosting-features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:14px}
+.host-feature-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  transition:all 0.28s var(--spring);
+}
+.host-feature-item:hover{transform:translateY(-4px);border-color:#38bdf8;box-shadow:var(--shadow)}
+.host-feature-item h4{margin:0 0 6px;font-size:16px;color:#0f172a}
+.host-feature-item p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* Frameworks Grid */
+.framework-suite{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.framework-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px 22px;
+  text-align:left;
+  transition:transform .28s var(--spring),border-color .25s var(--smooth),box-shadow .28s var(--spring);
+}
+.framework-card:hover{transform:translateY(-4px);border-color:#38bdf8;box-shadow:var(--shadow)}
+.framework-card .badge{
+  display:inline-block;
+  background:var(--skyblue-light);
+  color:var(--skyblue);
+  border:1px solid #bae6fd;
+  padding:4px 10px;
+  border-radius:99px;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:10px;
+  letter-spacing:.04em;
+}
+.framework-card h3{margin:0 0 6px;font-size:16px;color:#0f172a}
+.framework-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:steps}
+.step{
+  padding:26px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  transition:transform .28s var(--spring),box-shadow .28s var(--spring);
+}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.step:before{
+  counter-increment:steps;
+  content:"0" counter(steps);
+  display:block;
+  color:#d99b00;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+.step h3{margin:0 0 7px;font-size:17px}
+.step p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+
+/* CTA */
+.cta{
+  margin:0 0 72px;
+  background:linear-gradient(125deg,var(--seablue-deep) 0%,var(--seablue) 60%,#0369a1 100%);
+  border-radius:28px;
+  color:#fff;
+  padding:50px 26px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 25px 65px rgba(11,79,108,0.25);
+}
+.cta:before{content:"";position:absolute;inset:-50%;background:radial-gradient(circle at 50% 0%,#38bdf826,transparent 42%);pointer-events:none}
+.cta>*{position:relative}
+.cta h2{font-size:clamp(28px,4vw,42px);margin:0 0 12px;text-shadow:var(--neon-glow)}
+.cta p{color:#e0f2fe;max-width:700px;margin:0 auto 24px;line-height:1.8}
+
+/* Enterprise Footer */
+.footer{background:#0a1926;color:#c8d3df;padding:56px 0 25px;border-top:1px solid #162a3d}
+.footer-top{display:grid;grid-template-columns:1.2fr 2.8fr;gap:42px;padding-bottom:38px;border-bottom:1px solid #ffffff14}
+.footer-brand p{font-size:13px;line-height:1.8;color:#9eacbd;max-width:340px}
+.footer-brand .brand-wordmark{color:#fff;font-size:25px}
+.footer-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.footer-col h3{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#38bdf8;margin:3px 0 14px}
+.footer-links{display:grid;gap:9px}
+.footer-links a{color:#aebaca;font-size:12.5px;margin:0}
+.footer-links a:hover{color:#ffca43}
+.footer-meta-block{padding-top:14px;font-size:12px;color:#94a3b8;line-height:1.7}
+.footer-meta-block strong{color:#e2e8f0;display:block;margin-bottom:3px}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;padding-top:24px;font-size:12px;color:#93a2b5}
+.footer-bottom a{color:#dce5ee;text-decoration:none}
+.footer-bottom a:hover{text-decoration:underline}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s var(--smooth),transform 0.75s var(--spring);will-change:opacity,transform}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:0.1s}
+.delay-2{transition-delay:0.2s}
+.delay-3{transition-delay:0.3s}
+
+/* ===== AUTH MODALS ===== */
+.auth-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(10,25,38,.78);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  opacity:0;
+  transition:opacity 0.28s var(--smooth);
+}
+.auth-overlay.show{display:flex;opacity:1}
+.auth-modal{
+  background:#fff;
+  border-radius:24px;
+  width:min(440px,100%);
+  padding:32px 28px;
+  box-shadow:0 30px 75px rgba(0,0,0,.3);
+  position:relative;
+  transform:scale(0.95) translateY(12px);
+  transition:transform 0.3s var(--spring);
+}
+.auth-overlay.show .auth-modal{transform:scale(1) translateY(0)}
+.auth-modal h2{margin:0 0 6px;font-size:23px;letter-spacing:-.03em}
+.auth-modal .sub{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.auth-modal label{display:block;font-size:12.5px;font-weight:700;margin:0 0 6px;color:#334155}
+.auth-modal input{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #dce4ed;
+  border-radius:11px;
+  font-size:14px;
+  margin-bottom:14px;
+  outline:none;
+  transition:border .2s var(--smooth),box-shadow .2s var(--smooth);
+  background:#fff;
+}
+.auth-modal input:focus{border-color:var(--skyblue);box-shadow:0 0 0 3px rgba(2,132,199,0.18)}
+.auth-modal .btn-submit{width:100%;margin-top:6px;padding:13px;font-size:15px}
+.auth-modal .switch{text-align:center;margin-top:16px;font-size:13px;color:var(--muted)}
+.auth-modal .switch a{color:var(--skyblue);font-weight:700;cursor:pointer;text-decoration:none}
+.auth-modal .switch a:hover{text-decoration:underline}
+.auth-modal .close-btn{
+  position:absolute;
+  top:16px;
+  right:16px;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:#94a3b8;
+  line-height:1;
+  border-radius:8px;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  transition:all .2s var(--smooth);
+}
+.auth-modal .close-btn:hover{background:#f1f5f9;color:#334155}
+
+/* Social Buttons */
+.social-buttons{display:grid;gap:9px;margin-bottom:16px}
+.btn-social{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  width:100%;
+  padding:11px 14px;
+  border-radius:11px;
+  border:1px solid #dce4ed;
+  background:#fff;
+  color:#1e293b;
+  font-size:13.5px;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .22s var(--spring);
+}
+.btn-social:hover{background:#f8fafc;border-color:#38bdf8;transform:translateY(-1px)}
+.btn-social:active{transform:scale(0.98)}
+.btn-social svg{width:18px;height:18px;flex-shrink:0}
+.auth-divider{
+  display:flex;
+  align-items:center;
+  text-align:center;
+  margin:16px 0;
+  color:#94a3b8;
+  font-size:11.5px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;border-bottom:1px solid #e2e8f0}
+.auth-divider span{padding:0 10px}
+
+/* Alerts */
+.auth-error{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:10px;padding:11px 13px;font-size:13px;margin-bottom:14px;display:none;line-height:1.45}
+.auth-error.show{display:block}
+.auth-success{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;border-radius:10px;padding:11px 13px;font-size:13px;margin-bottom:14px;display:none;line-height:1.45}
+.auth-success.show{display:block}
+
+/* ===== DASHBOARD (Operational & Usage Centric) ===== */
+#dashboard-view{display:none;min-height:100vh;background:#f0f4f8}
+#dashboard-view.show{display:block;animation:fadeSpring 0.38s var(--spring) both}
+.dash-layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.dash-sidebar{background:#0a1926;color:#e2e8f0;padding:22px 16px;display:flex;flex-direction:column}
+.dash-logo{font-weight:900;font-size:19px;color:#fff;margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.dash-logo span{
+  width:32px;
+  height:32px;
+  background:linear-gradient(135deg,#ffb81c,#0284c7);
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  color:#0f172a;
+  font-weight:900;
+}
+.dash-nav a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:13.5px;
+  color:#94a3b8;
+  text-decoration:none;
+  margin-bottom:3px;
+  transition:.18s var(--smooth);
+}
+.dash-nav a:hover,.dash-nav a.active{background:#162a3d;color:#38bdf8}
+.dash-nav .section-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#64748b;margin:18px 0 8px 12px;font-weight:700}
+.dash-main{padding:30px 36px;max-width:1400px}
+.dash-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:28px;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.dash-header h1{font-size:24px;margin:0;letter-spacing:-.03em}
+.dash-header p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.dash-user{display:flex;align-items:center;gap:12px;font-size:14px}
+.dash-avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#0284c7;
+  color:#fff;
+  font-weight:800;
+  display:grid;
+  place-items:center;
+  object-fit:cover;
+  border:2px solid #fff;
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.dash-user-meta{display:flex;flex-direction:column;text-align:right}
+.dash-user-meta .user-name{font-weight:750;color:#0f172a}
+.dash-user-meta .user-email{font-size:12px;color:var(--muted)}
+.btn-signout{
+  background:#fff;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  padding:8px 15px;
+  font-size:13px;
+  cursor:pointer;
+  font-weight:700;
+  color:#334155;
+  transition:all .2s var(--smooth);
+}
+.btn-signout:hover{background:#fee2e2;color:#991b1b;border-color:#fca5a5;transform:translateY(-1px)}
+
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.stat-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:22px;
+  transition:transform .28s var(--spring),box-shadow .28s var(--spring);
+}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.stat-card .label{font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:600}
+.stat-card .value{font-size:26px;font-weight:800;letter-spacing:-.03em;color:#0f172a}
+.stat-card .note{font-size:12px;color:#94a3b8;margin-top:6px}
+
+.coming-soon-banner{
+  background:linear-gradient(90deg,#f0f9ff,#e0f2fe);
+  border:1px solid #bae6fd;
+  border-radius:14px;
+  padding:16px 20px;
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.coming-soon-banner strong{color:#0369a1}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px}
+.panel h3{margin:0 0 10px;font-size:16px;display:flex;align-items:center;justify-content:space-between}
+.panel p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.info-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid #f1f5f9;font-size:13.5px}
+.info-row:last-child{border-bottom:none}
+.info-label{width:160px;color:var(--muted);font-weight:600}
+.info-value{color:#0f172a;font-weight:650;overflow-wrap:anywhere}
+.soon-badge{display:inline-block;background:#e0f2fe;color:#0369a1;font-size:11px;font-weight:800;padding:3px 9px;border-radius:99px;margin-left:8px}
+
+@media(max-width:980px){
+  .navlinks{display:none}
+  .grid,.hosting-features-grid,.framework-suite{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-top{grid-template-columns:1fr}
+  .footer-columns{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .section{padding:65px 0}
+  .dash-layout{grid-template-columns:1fr}
+  .dash-sidebar{display:none}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .dash-user-meta{text-align:left}
+}
+@media(max-width:640px){
+  .wrap{width:min(100% - 32px,1180px)}
+  header{min-height:70px}
+  .brand-wordmark{font-size:23px}
+  .nav{gap:7px}
+  .nav .btn{font-size:12px;padding:10px 11px}
+  .hero{padding:65px 0 58px}
+  .grid,.feature-layout,.steps,.hosting-features-grid,.framework-suite{grid-template-columns:1fr}
+  .card{padding:22px}
+  .footer-columns{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:26px}
+  .stat-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== LANDING VIEW ROOT (Hidden completely upon login/registration) ===== -->
+<div id="landing-root">
+  <div class="top">
+    <header class="wrap">
+      <a class="brand" href="index.html" aria-label="Paddy Me home">
+        <img src="assets/logo.svg" alt="Paddy Me" class="brand-logo-img" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+        <span class="brand-wordmark" aria-label="Paddy Me">Paddy <b>Me.</b></span>
+      </a>
+      <nav class="nav">
+        <div class="navlinks">
+          <a href="#features">Features</a>
+          <a href="#web2app">Web2App</a>
+          <a href="#hosting">Hosting & Cloud</a>
+          <a href="#integrations">Integrations</a>
+        </div>
+        <a class="btn btn-light auth-open-signin" href="#signin">Sign in</a>
+        <a class="btn btn-gold auth-open-signup" href="#signup">Join waitlist <span aria-hidden="true">→</span></a>
+      </nav>
+    </header>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="pill"><span class="dot"></span> EARLY ACCESS · IN ACTIVE DEVELOPMENT</div>
+        <h1>Build, Deploy, and Manage with <span>Paddy Me.</span></h1>
+        <p class="lead">An enterprise developer and business operating system. From turnkey Web2App transformations, instant visual Image-to-App/Website synthesis, and Image-to-Game generation, to custom software and high-performance VPN protocol engineering, automated cloud hosting, and team workspace workflows—experience the complete infrastructure built to turn your digital vision into market-ready applications.</p>
+        <div class="actions">
+          <a class="btn btn-gold auth-open-signup" href="#signup">Join the Waitlist <span aria-hidden="true">→</span></a>
+          <a class="btn btn-light auth-open-signin" href="#signin">Already registered? Sign in</a>
+        </div>
+        <p class="fine">Early ecosystem access. Preview modules, enterprise roadmaps, and feature previews are part of our staged release lifecycle.</p>
+        <div id="setup-message" class="status" role="status" aria-live="polite"></div>
+        <div class="trustline">
+          <span>Bank-Grade Firebase Auth & Encryption</span>
+          <span>Scalable Multi-Tenant Architecture</span>
+          <span>Instant Access & Verification</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features Section (Background Grey) -->
+    <section class="section section-grey" id="features">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">A platform built to grow</p>
+          <h2>Tools for the next stage of your business</h2>
+          <p class="sub">A product direction inspired by modern SaaS workflows, with a clear path from early access to richer account and business features.</p>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="icon">◎</div>
+            <h3>Authentication & account security</h3>
+            <p>Plan for sign-up, sign-in, account profiles, session management, verification and security options through Firebase Authentication.</p>
+            <a class="text-link" href="#features">Authentication overview ↗</a>
+          </article>
+          <article class="card reveal delay-1">
+            <div class="icon">▦</div>
+            <h3>Organizations & multi-tenancy</h3>
+            <p>Support a future where businesses can create workspaces, invite teammates, and manage roles and permissions.</p>
+            <a class="text-link" href="#multitenancy">Explore multi-tenancy ↗</a>
+          </article>
+          <article class="card reveal delay-2">
+            <div class="icon">◇</div>
+            <h3>Membership & access management</h3>
+            <p>Plan membership tiers, operational quotas, and feature entitlements across unified workspaces.</p>
+            <a class="text-link" href="#membership">Explore memberships ↗</a>
+          </article>
+          <article class="card reveal">
+            <div class="icon">⌘</div>
+            <h3>Developer tools & SDKs</h3>
+            <p>Build toward a maintainable app with a framework and integration approach selected for the real product requirements.</p>
+            <a class="text-link" href="#integrations">Developer tools ↗</a>
+          </article>
+          <article class="card reveal delay-1">
+            <div class="icon">↗</div>
+            <h3>Web2App generation</h3>
+            <p>Planned tools to help turn a web experience into an app-style package, with platform-specific setup, testing and release steps.</p>
+            <a class="text-link" href="#web2app">Explore Web2App ↗</a>
+          </article>
+          <article class="card reveal delay-2">
+            <div class="icon">⚙</div>
+            <h3>Integrations</h3>
+            <p>Keep the architecture open to compatible databases, hosting, analytics, and operational systems as the product evolves.</p>
+            <a class="text-link" href="#integrations">Explore integrations ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-tenancy Section (White Background) -->
+    <section class="section section-white" id="multitenancy">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">For teams and businesses</p>
+          <h2>Multi-tenancy that can scale with your customers</h2>
+          <p class="sub">Organization features are planned for an upcoming release. Paddy Me can adopt these capabilities when its app framework and account model are implemented.</p>
+        </div>
+        <div class="feature-layout">
+          <div class="feature-panel reveal">
+            <span class="tag">PLANNED PRODUCT CAPABILITY</span>
+            <h3>One account layer. Separate teams, workspaces and access rules.</h3>
+            <p>Design for organizations that need to invite colleagues, assign permissions and switch between personal and business workspaces without mixing their data.</p>
+            <a class="btn btn-gold" href="#multitenancy">Explore multi-tenancy →</a>
+          </div>
+          <div class="feature-list">
+            <article class="feature-row reveal delay-1"><div class="check">✓</div><div><h3>Custom roles and permissions</h3><p>Plan role-based access for owners, administrators, members and other team roles.</p></div></article>
+            <article class="feature-row reveal delay-2"><div class="check">✓</div><div><h3>Invitations and team onboarding</h3><p>Prepare workflows for inviting teammates and managing membership requests.</p></div></article>
+            <article class="feature-row reveal delay-3"><div class="check">✓</div><div><h3>Organization settings</h3><p>Give organization owners a place to manage profile details, members and account preferences.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access Management & Entitlements Section (Background Grey) -->
+    <section class="section section-grey" id="membership">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Membership & Entitlements</p>
+          <h2>Make team access clear, frictionless and structured</h2>
+          <p class="sub">Organize access tiers, automate team lifecycles, and protect premium features seamlessly.</p>
+        </div>
+        <div class="grid">
+          <article class="card reveal"><div class="icon">≋</div><h3>Define membership tiers</h3><p>Configure access tiers, operational limits, included benefits, and permission terms across your organization.</p></article>
+          <article class="card reveal delay-1"><div class="icon">▣</div><h3>Real-time event verification</h3><p>Cryptographically verified access events ensuring entitlements activate instantly across systems.</p></article>
+          <article class="card reveal delay-2"><div class="icon">⌁</div><h3>Gate premium features</h3><p>SDK and server-level guards allowing authorized users seamless access to locked features and tools.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web2App Section (White Background) -->
+    <section class="section section-white" id="web2app">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Web2App generation</p>
+          <h2>From a web experience to an app-ready workflow</h2>
+          <p class="sub">A planned Web2App feature area for packaging a compatible website as an app-style experience. Actual generation, signing and store publishing require a dedicated implementation.</p>
+        </div>
+        <div class="feature-layout">
+          <div class="feature-panel reveal">
+            <span class="tag">WEB2APP · PLANNED</span>
+            <h3>Prepare your website for mobile app delivery.</h3>
+            <p>Future workflow could guide users through website URL checks, app name and icon setup, navigation and permission review, build configuration, device testing and publishing preparation.</p>
+            <a class="btn btn-gold" href="#web2app">Web2App details →</a>
+          </div>
+          <div class="feature-list">
+            <article class="feature-row reveal delay-1"><div class="check">1</div><div><h3>Website readiness</h3><p>Check HTTPS, responsive layout, navigation, login redirects and offline/error states.</p></div></article>
+            <article class="feature-row reveal delay-2"><div class="check">2</div><div><h3>App branding and settings</h3><p>Prepare app title, app icon and launch-screen assets from an assets folder.</p></div></article>
+            <article class="feature-row reveal delay-3"><div class="check">3</div><div><h3>Build, test and publish</h3><p>Package and validate the app, then follow the target platform's signing and store requirements.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PADDY ME HIGH PERFORMANCE HOSTING & CMS SECTION (Background Grey) ===== -->
+    <section class="section section-grey" id="hosting">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Web Application Hosting & Infrastructure</p>
+          <h2>Fast SSD Powered Cloud Servers & Control Environments</h2>
+          <p class="sub">High-performance hosting infrastructure with isolated environments, cPanel control controls, and standard tools built for reliability.</p>
+        </div>
+
+        <div class="hosting-features-grid reveal">
+          <div class="host-feature-item">
+            <h4>cPanel Hosting Control</h4>
+            <p>Manage your websites and email accounts easily with the cPanel control panel at no additional cost.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>99.9% Uptime Guarantee</h4>
+            <p>Backed by a low-latency, globally connected network infrastructure built for round-the-clock reliability.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>Multi Layered Security</h4>
+            <p>Your website is protected by multi-level security firewalls, malware filters, and live monitoring tools.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>Multiple PHP Versions</h4>
+            <p>Easily switch between PHP versions for the exact runtime that supports your application.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>Content Management System Support</h4>
+            <p>Easily get started with 1-Click install of your favorite CMS like Joomla, WordPress, Drupal and a host of others.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>Fast SSD Powered Servers</h4>
+            <p>Give your website load speed a boost with super fast SSD drives powering your websites and databases.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>CloudLinux CageFS Technology</h4>
+            <p>CageFS ensures your website runs in an isolated environment free from intrusion or resource drains.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>Award-Winning Support</h4>
+            <p>Get expert technical guidance for your website, domain, and server configuration issues.</p>
+          </div>
+          <div class="host-feature-item">
+            <h4>Web Application Hosting & Ready to Use CMS</h4>
+            <p>Deploy application portals, blogs, wikis, and community boards with hundreds of ready-to-use CMS templates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frameworks & SDKs (White Background) -->
+    <section class="section section-white" id="integrations">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-bottom:0">
+          <p class="eyebrow">Frameworks and SDKs</p>
+          <h2>Choose the right foundation for each app</h2>
+          <p class="sub">Framework names are illustrative of supported runtime foundations and integration adapters.</p>
+          <div class="framework-suite">
+            <div class="framework-card">
+              <span class="badge">Web & SaaS Engine</span>
+              <h3>Next.js & React</h3>
+              <p>Optimized for full-stack SSR/SSG web platforms, instant Web2App PWA delivery, and high-performance applications.</p>
+            </div>
+            <div class="framework-card">
+              <span class="badge">Mobile & Cross-Platform</span>
+              <h3>Expo & React Native</h3>
+              <p>Turnkey compilation into native iOS and Android binaries with biometric authentication and native device features.</p>
+            </div>
+            <div class="framework-card">
+              <span class="badge">Edge & Performance</span>
+              <h3>Astro & TanStack React Start</h3>
+              <p>Zero-JS by default content sites, server-islands, and type-safe routing built for high-speed publishing and hosting.</p>
+            </div>
+            <div class="framework-card">
+              <span class="badge">Dynamic SPAs</span>
+              <h3>React Router & Remix</h3>
+              <p>Enterprise administrative consoles, multi-tenant dashboards, and high-frequency data loading with edge routing.</p>
+            </div>
+            <div class="framework-card">
+              <span class="badge">Visual Game Synthesis</span>
+              <h3>Godot & Phaser Engine</h3>
+              <p>Render playable 2D/3D browser and mobile games from visual mockups with embedded runtime SDKs.</p>
+            </div>
+            <div class="framework-card">
+              <span class="badge">VPN & Network Daemons</span>
+              <h3>Rust & Go (WireGuard)</h3>
+              <p>Low-latency encrypted VPN tunnels, custom proxy daemons, and automated handshake routing built on memory-safe runtimes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Launch Steps (Background Grey) -->
+    <section class="section section-grey">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">A clear launch path</p>
+          <h2>Join early. Follow progress. Explore when ready.</h2>
+          <p class="sub">The waitlist is the first step—not a promise that every feature is already live.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal"><h3>Join the waitlist</h3><p>Create an account using Firebase Authentication and receive early-access updates. Verify your email to help confirm account ownership.</p></article>
+          <article class="step reveal delay-1"><h3>Follow product milestones</h3><p>Learn about new features as they are implemented, tested and prepared for release.</p></article>
+          <article class="step reveal delay-2"><h3>Choose services when available</h3><p>Review clear terms and documentation before activating services across your workspaces.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="wrap">
+      <div class="cta reveal">
+        <p class="eyebrow" style="color:#ffca43">Early access</p>
+        <h2>Be part of what Paddy Me becomes.</h2>
+        <p>Join the waitlist for launch updates and developer preview opportunities. Features are introduced as they are tested and deployed.</p>
+        <div class="actions">
+          <a class="btn btn-gold auth-open-signup" href="#signup">Join the Waitlist →</a>
+          <a class="btn btn-light auth-open-signin" href="#signin">Sign in</a>
+        </div>
+        <p class="fine" style="color:#e0f2fe">Paddy Me is under development. Tools and deployment clusters become active as individual services launch.</p>
+      </div>
+    </section>
+
+    <section class="section section-white" id="legal-notice">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Important notice</p>
+          <h2>Early access, privacy and service status</h2>
+          <p class="sub">Paddy Me is under development. Registration is for an early-access waitlist only; it does not create an operational service entitlement. Dashboard sections are previews of forthcoming management tools.</p>
+          <p class="fine">Before public production launch, publish reviewed Terms of Service and a Privacy Policy describing the data collected, purpose, retention, contact details and deletion process. Do not treat this short notice as a substitute for those documents.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== ENTERPRISE PADDY ME FOOTER ===== -->
+  <footer class="footer" id="about-paddy-me">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Paddy Me home">
+            <img src="assets/logo-white.svg" alt="Paddy Me" class="brand-logo-img" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+            <span class="brand-wordmark" aria-label="Paddy Me">Paddy <b>Me.</b></span>
+          </a>
+          <p style="margin-top:14px">Building a flexible platform for account access, business workspaces, membership workflows, cPanel cloud hosting, and future app experiences.</p>
+          <div class="footer-meta-block">
+            <strong>Sales & Support Hours</strong>
+            Mondays – Fridays: 8:00am – 5:30pm<br>
+            Sundays: 10:00am – 5:30pm<br>
+            Saturdays: Closed
+          </div>
+          <div class="footer-meta-block">
+            <strong>Direct Contact</strong>
+            <a href="mailto:support@paddyme.com" style="color:#ffca43;text-decoration:none">support@paddyme.com</a>
+          </div>
+        </div>
+
+        <div class="footer-columns">
+          <!-- Services -->
+          <div class="footer-col">
+            <h3>Services</h3>
+            <div class="footer-links">
+              <a href="#hosting">Shared Hosting</a>
+              <a href="#hosting">Domains</a>
+              <a href="#hosting">VPS Hosting</a>
+              <a href="#hosting">Become a Reseller</a>
+              <a href="#web2app">Web2App Packaging</a>
+              <a href="#membership">Access Management</a>
+            </div>
+          </div>
+
+          <!-- Clients & Portal -->
+          <div class="footer-col">
+            <h3>Clients Area</h3>
+            <div class="footer-links">
+              <a href="#signin" class="auth-open-signin">Login to Members Area</a>
+              <a href="#signup" class="auth-open-signup">Create Account</a>
+              <a href="#signin" class="auth-open-signin">Password Reset</a>
+              <a href="#hosting">Announcements</a>
+              <a href="#features">Getting Started Guide</a>
+              <a href="#hosting">Frequently Asked Questions</a>
+              <a href="#hosting">Knowledgebase</a>
+            </div>
+          </div>
+
+          <!-- Service Policies -->
+          <div class="footer-col">
+            <h3>Service Policies</h3>
+            <div class="footer-links">
+              <a href="#legal-notice">Terms of Service</a>
+              <a href="#legal-notice">Privacy Policy</a>
+              <a href="#legal-notice">Acceptable Usage Policy</a>
+              <a href="#legal-notice">Unlimited Usage Policy</a>
+              <a href="#legal-notice">Backup Policy</a>
+              <a href="#legal-notice">Cookie Settings</a>
+            </div>
+          </div>
+
+          <!-- Resources & Legal -->
+          <div class="footer-col">
+            <h3>Resources & Legal</h3>
+            <div class="footer-links">
+              <a href="#legal-notice">Abuse Report</a>
+              <a href="#legal-notice">Registrant Rights</a>
+              <a href="#legal-notice">Registrant Educational</a>
+              <a href="#legal-notice">Law Enforcement</a>
+              <a href="#legal-notice">Security Overview</a>
+              <a href="mailto:support@paddyme.com">Contact Legal Team</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Paddy Me. All rights reserved.</span>
+        <span>Enterprise Infrastructure & cPanel SSD Powered · <a href="#legal-notice">Service status</a></span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== AUTH MODALS (Firebase Production) ===== -->
+<div class="auth-overlay" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="signup-title">
+  <div class="auth-modal">
+    <button class="close-btn" onclick="closeAuthModals()" aria-label="Close">×</button>
+    <h2 id="signup-title">Create Account</h2>
+    <p class="sub">Join the Paddy Me early-access waitlist</p>
+
+    <div class="social-buttons">
+      <button type="button" class="btn-social" id="google-signup-btn">
+        <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.3-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"/></svg>
+        Continue with Google
+      </button>
+      <button type="button" class="btn-social" id="github-signup-btn">
+        <svg viewBox="0 0 24 24" fill="#181717"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        Continue with GitHub
+      </button>
+    </div>
+
+    <div class="auth-divider"><span>or register with email</span></div>
+
+    <div class="auth-error" id="signup-error" role="alert" aria-live="polite"></div>
+    <div class="auth-success" id="signup-success" role="status" aria-live="polite"></div>
+
+    <form id="signup-form">
+      <label for="signup-name">Full name</label>
+      <input type="text" id="signup-name" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="100" required>
+
+      <label for="signup-email">Email</label>
+      <input type="email" id="signup-email" placeholder="you@example.com" autocomplete="email" maxlength="254" required>
+
+      <label for="signup-password">Password</label>
+      <input type="password" id="signup-password" placeholder="At least 6 characters" autocomplete="new-password" minlength="6" required>
+
+      <button type="submit" class="btn btn-gold btn-submit" id="signup-btn-submit">Create account</button>
+    </form>
+    <p class="switch">Already have an account? <a onclick="switchToSignIn()">Sign in</a></p>
+  </div>
+</div>
+
+<div class="auth-overlay" id="signin-modal" role="dialog" aria-modal="true" aria-labelledby="signin-title">
+  <div class="auth-modal">
+    <button class="close-btn" onclick="closeAuthModals()" aria-label="Close">×</button>
+    <h2 id="signin-title">Sign In</h2>
+    <p class="sub">Welcome back to Paddy Me</p>
+
+    <div class="social-buttons">
+      <button type="button" class="btn-social" id="google-signin-btn">
+        <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.3-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"/></svg>
+        Sign in with Google
+      </button>
+      <button type="button" class="btn-social" id="github-signin-btn">
+        <svg viewBox="0 0 24 24" fill="#181717"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        Sign in with GitHub
+      </button>
+    </div>
+
+    <div class="auth-divider"><span>or sign in with email</span></div>
+
+    <div class="auth-error" id="signin-error" role="alert" aria-live="polite"></div>
+    <div class="auth-success" id="signin-success" role="status" aria-live="polite"></div>
+
+    <form id="signin-form">
+      <label for="signin-email">Email</label>
+      <input type="email" id="signin-email" placeholder="you@example.com" autocomplete="username" maxlength="254" required>
+
+      <label for="signin-password">Password</label>
+      <input type="password" id="signin-password" placeholder="Your password" autocomplete="current-password" required>
+
+      <button type="submit" class="btn btn-gold btn-submit" id="signin-btn-submit">Sign In</button>
+    </form>
+    <p class="switch"><a href="#reset-password" id="forgot-password-link">Forgot password?</a></p>
+    <p class="switch">New here? <a onclick="switchToSignUp()">Create an account</a></p>
+  </div>
+</div>
+
+<!-- ===== FULL OPERATIONAL DASHBOARD (Usage Centric) ===== -->
+<div id="dashboard-view">
+  <div class="dash-layout">
+    <aside class="dash-sidebar">
+      <div class="dash-logo"><span>P</span> Paddy Me</div>
+      <nav class="dash-nav">
+        <a href="#dashboard" class="active">🏠 Dashboard</a>
+        <a href="#operations">⚡ Operations</a>
+        <a href="#workflows">🔄 Workflows</a>
+        <a href="#reports">📄 System Reports</a>
+        <a href="#access-links">🔗 Access Links</a>
+        <a href="#customers">👥 Customers & Teams</a>
+        <a href="#subscriptions">🛡 Subscriptions & Tiers</a>
+        <a href="#transfers">📦 Data Transfers</a>
+        <a href="#domains">🌐 Domains</a>
+        <a href="#hosting-dash">🖥 Hosting</a>
+        <a href="#email-dash">✉ Email</a>
+        <div class="section-label">Configure</div>
+        <a href="#auth">👤 User & Authentication</a>
+        <a href="#orgs">🏢 Organizations Settings</a>
+        <a href="#sessions">🔑 Session Management</a>
+        <a href="#integrations">🔌 Integrations</a>
+        <div class="section-label">Developers</div>
+        <a href="#apikeys">⭐ API Keys</a>
+        <a href="#webhooks">📡 Webhooks</a>
+      </nav>
+    </aside>
+
+    <main class="dash-main">
+      <div class="dash-header">
+        <div>
+          <h1>Good morning, <span id="dash-username">Member</span> 👋</h1>
+          <p>Here's a quick overview of your early-access account and deployments.</p>
+        </div>
+        <div class="dash-user">
+          <img id="dash-avatar-img" class="dash-avatar" src="" alt="Avatar" style="display:none">
+          <div id="dash-avatar-fallback" class="dash-avatar">P</div>
+          <div class="dash-user-meta">
+            <span class="user-name" id="dash-name-display">Member</span>
+            <span class="user-email" id="dash-email"></span>
+          </div>
+          <button class="btn-signout" onclick="signOutUser()">Sign out</button>
+        </div>
+      </div>
+
+      <div class="coming-soon-banner">
+        <span style="font-size:22px">🚧</span>
+        <div>
+          <strong>Services are active in early access.</strong><br>
+          <span style="font-size:13px;color:#0369a1">You have successfully authenticated with Paddy Me Firebase production services. Web2App packaging, visual code synthesis, VPN tunnels, hosting clusters, and workflow pipelines are initializing for your workspace.</span>
+        </div>
+      </div>
+
+      <!-- 4 Operational Stat Cards -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">Total Deployments</div>
+          <div class="value">0</div>
+          <div class="note">Ready for build tasks</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Verified Workflows</div>
+          <div class="value">0</div>
+          <div class="note">Pipeline ready</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Queued Tasks</div>
+          <div class="value">0</div>
+          <div class="note">Standby</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">System Availability</div>
+          <div class="value">99.9%</div>
+          <div class="note">Infrastructure online</div>
+        </div>
+      </div>
+
+      <!-- User Verification Panel -->
+      <div class="panel">
+        <h3>Member Identity & Security <span class="soon-badge" style="background:#ecfdf5;color:#047857">Verified</span></h3>
+        <div class="info-row"><div class="info-label">Account UID</div><div class="info-value" id="dash-uid">—</div></div>
+        <div class="info-row"><div class="info-label">Primary Email</div><div class="info-value" id="dash-email-row">—</div></div>
+        <div class="info-row"><div class="info-label">Auth Provider</div><div class="info-value" id="dash-provider">—</div></div>
+        <div class="info-row"><div class="info-label">Email Verified</div><div class="info-value" id="dash-verified">—</div></div>
+      </div>
+
+      <!-- Operational Activity Panels -->
+      <div class="panel">
+        <h3>Recent Activity Logs <span class="soon-badge">Live Listeners</span></h3>
+        <p>Your workflow logs and deployment events will appear here once cloud builds are executed. No activity yet.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Quick Actions <span class="soon-badge">Coming Soon</span></h3>
+        <p>Create access links, generate reports, provision server hosting, and manage custom domains directly from this console.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Account Status</h3>
+        <p>You are successfully registered on the Paddy Me early-access developer platform. We will notify you as new features and clusters become available.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===== OFFICIAL PADDY ME FIREBASE INTEGRATION (v13.0.0) ===== -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signInWithRedirect,
+    getRedirectResult,
+    GoogleAuthProvider,
+    GithubAuthProvider,
+    onAuthStateChanged,
+    signOut,
+    updateProfile,
+    setPersistence,
+    browserLocalPersistence,
+    sendEmailVerification,
+    sendPasswordResetEmail
+  } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+  import {
+    getAnalytics,
+    isSupported
+  } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-analytics.js";
+
+  // Official Paddy Me Firebase Production Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCNAeQ8S5PWsmIDsnqyjglXEdW7I4iHeyg",
+    authDomain: "paddy-me.firebaseapp.com",
+    projectId: "paddy-me",
+    storageBucket: "paddy-me.firebasestorage.app",
+    messagingSenderId: "141035127850",
+    appId: "1:141035127850:web:068d03e57e1257a19cef53",
+    measurementId: "G-CGSCHMC4BJ"
+  };
+
+  let app, auth, analytics;
+  try {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    setPersistence(auth, browserLocalPersistence);
+
+    // Initialize Analytics if supported in user environment
+    isSupported().then((supported) => {
+      if (supported) analytics = getAnalytics(app);
+    }).catch(() => {});
+  } catch (err) {
+    console.error("[Paddy Me Firebase init error]", err);
+    const box = document.getElementById('setup-message');
+    if (box) {
+      box.textContent = `Firebase init notice: ${err?.message || 'Check connection'}`;
+      box.classList.add('show');
+    }
+  }
+
+  // OAuth Providers
+  const googleProvider = new GoogleAuthProvider();
+  googleProvider.setCustomParameters({ prompt: 'select_account' });
+  const githubProvider = new GithubAuthProvider();
+
+  // Helper DOM selectors
+  const byId = (id) => document.getElementById(id);
+  const showMessage = (box, msg) => { if (box) { box.textContent = msg; box.classList.add('show'); } };
+  const hideMessage = (box) => { if (box) { box.textContent = ''; box.classList.remove('show'); } };
+
+  // Error Sanitizer (Guards against leaking internal stack traces)
+  function friendlyAuthError(error) {
+    console.error("Auth Exception:", error);
+    const code = error?.code || '';
+    switch (code) {
+      case 'auth/popup-closed-by-user':
+        return 'The sign-in popup was closed before completion. Please try again.';
+      case 'auth/popup-blocked':
+        return 'Popup blocked by browser. Please allow popups or use redirect for paddy-me.firebaseapp.com.';
+      case 'auth/email-already-in-use':
+        return 'An account already exists with this email address. Please sign in instead.';
+      case 'auth/invalid-email':
+        return 'Please provide a valid email address.';
+      case 'auth/wrong-password':
+      case 'auth/invalid-credential':
+      case 'auth/user-not-found':
+        return 'Invalid credentials. Please verify your email and password.';
+      case 'auth/weak-password':
+        return 'Password must be at least 6 characters.';
+      case 'auth/network-request-failed':
+        return 'Network connection issue. Please verify your internet connection.';
+      case 'auth/too-many-requests':
+        return 'Too many attempts. Access temporarily restricted. Please try again later.';
+      case 'auth/unauthorized-domain':
+        return 'Domain not authorized. Please add your domain to Firebase Console > Authentication > Settings > Authorized Domains.';
+      default:
+        return error?.message || 'Authentication encountered an error. Please try again.';
+    }
+  }
+
+  // Anti-Spam Button Debounce Protection
+  let isSubmitting = false;
+  function setBusy(button, isBusy, busyText) {
+    if (!button) return;
+    isSubmitting = isBusy;
+    if (isBusy) {
+      button.dataset.prev = button.textContent;
+      button.textContent = busyText || 'Processing…';
+      button.disabled = true;
+    } else {
+      button.textContent = button.dataset.prev || button.textContent;
+      button.disabled = false;
+    }
+  }
+
+  // Modal Controls
+  window.closeAuthModals = function() {
+    byId('signup-modal').classList.remove('show');
+    byId('signin-modal').classList.remove('show');
+  };
+  window.switchToSignIn = function() {
+    hideMessage(byId('signup-error'));
+    hideMessage(byId('signup-success'));
+    byId('signup-modal').classList.remove('show');
+    byId('signin-modal').classList.add('show');
+  };
+  window.switchToSignUp = function() {
+    hideMessage(byId('signin-error'));
+    hideMessage(byId('signin-success'));
+    byId('signin-modal').classList.remove('show');
+    byId('signup-modal').classList.add('show');
+  };
+
+  // Sign out user
+  window.signOutUser = async function() {
+    try {
+      await signOut(auth);
+    } catch (err) {
+      console.error("Sign out error:", err);
+    }
+  };
+
+  // Modal Triggers
+  document.querySelectorAll('.auth-open-signup').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      hideMessage(byId('signup-error'));
+      hideMessage(byId('signup-success'));
+      byId('signup-modal').classList.add('show');
+    });
+  });
+  document.querySelectorAll('.auth-open-signin').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      hideMessage(byId('signin-error'));
+      hideMessage(byId('signin-success'));
+      byId('signin-modal').classList.add('show');
+    });
+  });
+  document.querySelectorAll('.auth-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) window.closeAuthModals();
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') window.closeAuthModals();
+  });
+
+  // Mobile / Redirect Result Listener (Supports https://paddy-me.firebaseapp.com/__/auth/handler)
+  getRedirectResult(auth)
+    .then((result) => {
+      if (result?.user) {
+        window.closeAuthModals();
+      }
+    })
+    .catch((err) => {
+      console.warn("Redirect evaluation notice:", err);
+    });
+
+  // OAuth Handler (Google & GitHub with auto-redirect fallback if popups are blocked)
+  async function performOAuth(provider, errorBoxId) {
+    if (isSubmitting) return;
+    const errBox = byId(errorBoxId);
+    hideMessage(errBox);
+    try {
+      await signInWithPopup(auth, provider);
+      window.closeAuthModals();
+    } catch (err) {
+      if (err?.code === 'auth/popup-blocked') {
+        try {
+          await signInWithRedirect(auth, provider);
+          return;
+        } catch (redirectErr) {
+          showMessage(errBox, friendlyAuthError(redirectErr));
+          return;
+        }
+      }
+      showMessage(errBox, friendlyAuthError(err));
+    }
+  }
+
+  byId('google-signup-btn')?.addEventListener('click', () => performOAuth(googleProvider, 'signup-error'));
+  byId('google-signin-btn')?.addEventListener('click', () => performOAuth(googleProvider, 'signin-error'));
+  byId('github-signup-btn')?.addEventListener('click', () => performOAuth(githubProvider, 'signup-error'));
+  byId('github-signin-btn')?.addEventListener('click', () => performOAuth(githubProvider, 'signin-error'));
+
+  // Registration Handler (Email/Password)
+  byId('signup-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    const btn = byId('signup-btn-submit');
+    const name = byId('signup-name').value.trim();
+    const email = byId('signup-email').value.trim().toLowerCase();
+    const password = byId('signup-password').value;
+    const errBox = byId('signup-error');
+    hideMessage(errBox);
+
+    if (name.length < 2) {
+      showMessage(errBox, 'Please enter your full name (at least 2 characters).');
+      return;
+    }
+    if (password.length < 6) {
+      showMessage(errBox, 'Password must be at least 6 characters.');
+      return;
+    }
+
+    setBusy(btn, true, 'Creating account…');
+    try {
+      const cred = await createUserWithEmailAndPassword(auth, email, password);
+      try {
+        await updateProfile(cred.user, { displayName: name });
+      } catch (pErr) {
+        console.warn("Name profile deferred:", pErr);
+      }
+      try {
+        await sendEmailVerification(cred.user);
+      } catch (vErr) {
+        console.warn("Verification email notice:", vErr);
+      }
+
+      byId('signup-form').reset();
+      window.closeAuthModals();
+    } catch (err) {
+      showMessage(errBox, friendlyAuthError(err));
+    } finally {
+      setBusy(btn, false);
+    }
+  });
+
+  // Sign In Handler (Email/Password)
+  byId('signin-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    const btn = byId('signin-btn-submit');
+    const email = byId('signin-email').value.trim().toLowerCase();
+    const password = byId('signin-password').value;
+    const errBox = byId('signin-error');
+    hideMessage(errBox);
+
+    setBusy(btn, true, 'Signing in…');
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      byId('signin-form').reset();
+      window.closeAuthModals();
+    } catch (err) {
+      showMessage(errBox, friendlyAuthError(err));
+    } finally {
+      setBusy(btn, false);
+    }
+  });
+
+  // Password Reset
+  byId('forgot-password-link').addEventListener('click', async (e) => {
+    e.preventDefault();
+    const email = byId('signin-email').value.trim().toLowerCase();
+    const errBox = byId('signin-error');
+    const okBox = byId('signin-success');
+    hideMessage(errBox);
+    hideMessage(okBox);
+
+    if (!email) {
+      showMessage(errBox, 'Enter your email address above first, then click Forgot password.');
+      byId('signin-email').focus();
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      showMessage(okBox, `Reset instructions dispatched to ${email}. Check your inbox and spam folder.`);
+    } catch (err) {
+      showMessage(errBox, friendlyAuthError(err));
+    }
+  });
+
+  // Instant Auth State Observer (Swaps UI immediately upon Firebase token validation)
+  onAuthStateChanged(auth, (user) => {
+    const landing = byId('landing-root');
+    const dashboard = byId('dashboard-view');
+
+    if (user) {
+      landing.style.display = 'none';
+      dashboard.classList.add('show');
+      window.scrollTo(0, 0);
+
+      const name = user.displayName || (user.email ? user.email.split('@')[0] : 'Member');
+      byId('dash-username').textContent = name;
+      byId('dash-name-display').textContent = name;
+      byId('dash-email').textContent = user.email || '';
+      byId('dash-email-row').textContent = user.email || 'None';
+
+      // Secure Avatar Binding with strict HTTPS Protocol Guard
+      const avatarImg = byId('dash-avatar-img');
+      const avatarFallback = byId('dash-avatar-fallback');
+      if (user.photoURL && user.photoURL.startsWith('https://')) {
+        avatarImg.src = user.photoURL;
+        avatarImg.style.display = 'block';
+        avatarFallback.style.display = 'none';
+      } else {
+        avatarImg.style.display = 'none';
+        avatarFallback.style.display = 'grid';
+        avatarFallback.textContent = name.charAt(0).toUpperCase();
+      }
+
+      byId('dash-uid').textContent = user.uid;
+      byId('dash-provider').textContent = user.providerData?.[0]?.providerId || 'password';
+      byId('dash-verified').textContent = user.emailVerified ? 'Yes (Verified)' : 'Pending verification';
+    } else {
+      dashboard.classList.remove('show');
+      landing.style.display = '';
+    }
+  }, (err) => {
+    console.error("Auth state observer error:", err);
+    const box = byId('setup-message');
+    if (box) showMessage(box, friendlyAuthError(err));
+  });
+
+  byId('year').textContent = new Date().getFullYear();
+
+  function initObserver() {
+    const items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      items.forEach(el => el.classList.add('in-view'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(el => observer.observe(el));
+  }
+  initObserver();
+</script>
+
+</body>
+</html>
