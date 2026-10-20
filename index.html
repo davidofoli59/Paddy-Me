@@ -3,39 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b4f6c">
-<title>Paddy Me. — Enterprise Development, Hosting &amp; Operating Platform</title>
-<meta name="description" content="Paddy Me. is an enterprise development and business operating platform offering turnkey Web2App transformation, image-to-app and website generation, image-to-game generation, custom software solutions, VPN protocol engineering, and automated cloud hosting.">
+<meta name="theme-color" content="#071524">
+<title>Paddy Me. — Payments, Domains, Hosting &amp; Email Platform</title>
+<meta name="description" content="Paddy Me. (PayPaddy) is an enterprise developer and business operating platform offering turnkey Web2App transformation, image-to-app synthesis, global payments, SSD cPanel cloud hosting, and professional email infrastructure.">
 <link rel="canonical" href="https://paddy-me.firebaseapp.com/">
-
-<!-- Open Graph / Meta -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://paddy-me.firebaseapp.com/">
-<meta property="og:title" content="Paddy Me. — Enterprise Development, Hosting &amp; Operating Platform">
-<meta property="og:description" content="Paddy Me. provides turnkey Web2App packaging, image-to-app synthesis, high-performance VPN engineering, and cPanel cloud hosting.">
-<meta property="og:image" content="assets/logo.svg">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Paddy Me. — Enterprise Development, Hosting &amp; Operating Platform">
-<meta name="twitter:description" content="Paddy Me. provides turnkey Web2App packaging, image-to-app synthesis, high-performance VPN engineering, and cPanel cloud hosting.">
-<meta name="twitter:image" content="assets/logo.svg">
-
-<!-- Structured Data (JSON-LD) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Paddy Me.",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "All",
-  "description": "Enterprise development and business operating platform offering turnkey Web2App transformation, visual code synthesis, VPN protocol engineering, automated cloud hosting, and team workspace workflows.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/PreOrder"
-  }
-}
-</script>
 
 <style>
 :root{
@@ -47,23 +18,24 @@
   --seablue-deep:#082d3e;
   --skyblue:#0284c7;
   --skyblue-light:#e0f2fe;
-  --skyblue-glow:rgba(2,132,199,0.25);
+  --teal:#00c48c;
+  --teal-bright:#00f2fe;
+  --teal-glow:rgba(0,196,140,0.35);
   --neon-white:#fdfeff;
-  --neon-glow:0 0 14px rgba(255,255,255,0.7);
   --bg-grey:#edf2f7;
   --bg-grey-border:#dbe3ec;
   --muted:#5a6e85;
   --line:#e2e8f0;
   --paper:#f8fafc;
   --white:#fff;
-  --radius:22px;
-  --shadow:0 24px 55px -12px rgba(11,79,108,0.12);
+  --radius:20px;
+  --shadow:0 20px 45px -12px rgba(11,79,108,0.12);
   --spring:cubic-bezier(0.16, 1, 0.3, 1);
   --smooth:cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
 body{
   margin:0;
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -74,87 +46,69 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 a{color:inherit}
-.wrap{width:min(1200px,calc(100% - 44px));margin-inline:auto}
+.wrap{width:min(1240px,calc(100% - 40px));margin-inline:auto}
 
 /* Brand Wordmark & Image Logo */
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 .brand-logo-img{height:34px;max-width:140px;object-fit:contain}
-.brand-wordmark{font-size:27px;font-weight:900;letter-spacing:-1.2px;color:var(--ink);white-space:nowrap;line-height:1.1}
-.brand-wordmark b{color:#e9a300}
+.brand-wordmark{font-size:26px;font-weight:900;letter-spacing:-1.2px;color:var(--ink);white-space:nowrap;line-height:1.1}
+.brand-wordmark b{color:var(--teal)}
 
 /* Header & Nav */
 .top{
   position:sticky;
   top:0;
   z-index:40;
-  background:rgba(255,255,255,0.94);
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(226,232,240,0.9);
-  transition:all 0.35s var(--smooth);
+  transition:all 0.3s var(--smooth);
 }
-header{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+header{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav{display:flex;align-items:center;gap:10px}
-.navlinks{display:flex;gap:20px;align-items:center;margin-right:12px}
+.navlinks{display:flex;gap:22px;align-items:center;margin-right:12px}
 .navlinks a,.footer-links a{
   font-size:13.5px;
   text-decoration:none;
   color:var(--muted);
   font-weight:600;
-  transition:color .25s var(--smooth),transform .25s var(--smooth);
+  transition:color .2s;
 }
-.navlinks a:hover,.footer-links a:hover{color:var(--skyblue);transform:translateY(-1px)}
+.navlinks a:hover,.footer-links a:hover{color:var(--skyblue)}
 
-/* Professional Buttons */
+/* Buttons */
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:8px;
   border-radius:12px;
-  padding:12px 20px;
+  padding:11px 20px;
   text-decoration:none;
   font-size:14px;
   font-weight:750;
   border:1px solid transparent;
   cursor:pointer;
-  transition:transform 0.28s var(--spring),box-shadow 0.28s var(--spring),background 0.25s var(--smooth),border-color 0.25s var(--smooth);
+  transition:transform 0.25s var(--spring),box-shadow 0.25s var(--spring),background 0.2s;
 }
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:scale(0.975)}
-.btn-gold{background:var(--gold);color:#172234;box-shadow:0 8px 24px var(--gold-glow)}
-.btn-gold:hover{background:#ffc233;box-shadow:0 14px 34px rgba(255,184,28,0.48)}
-.btn-light{background:#fff;border-color:#cbd5e1;color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,0.03)}
+.btn-gold{background:var(--gold);color:#142238;box-shadow:0 8px 24px var(--gold-glow)}
+.btn-gold:hover{background:#ffc233}
+.btn-light{background:#fff;border-color:#cbd5e1;color:var(--ink)}
 .btn-light:hover{border-color:var(--skyblue);background:#fcfdfe}
+.btn-teal{background:linear-gradient(135deg,#00f2fe,#00c48c);color:#071a2e;font-weight:800;border:none;box-shadow:0 8px 25px rgba(0,196,140,0.3)}
+.btn-teal:hover{box-shadow:0 12px 30px rgba(0,196,140,0.45)}
 
-/* Hero */
+/* Hero Section */
 .hero{
   position:relative;
-  isolation:isolate;
-  padding:100px 0 92px;
-  background:radial-gradient(ellipse at 50% -10%,#ffffff 0%,#f0f6fa 65%,var(--bg-grey) 100%);
+  padding:96px 0 88px;
+  background:radial-gradient(ellipse at 50% -10%,#ffffff 0%,#f0f7fb 60%,var(--bg-grey) 100%);
   text-align:center;
   overflow:hidden;
 }
-.hero:before,.hero:after{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  width:520px;
-  height:520px;
-  border-radius:50%;
-  filter:blur(80px);
-  opacity:.42;
-  pointer-events:none;
-  animation:ambientShift 16s ease-in-out infinite alternate;
-}
-.hero:before{top:-260px;left:-160px;background:radial-gradient(circle,#ffd76d,transparent 68%)}
-.hero:after{right:-160px;bottom:-280px;background:radial-gradient(circle,#7dd3fc,transparent 68%);animation-delay:-8s}
-@keyframes ambientShift{
-  0%{transform:translate(0,0) scale(1)}
-  100%{transform:translate(45px,35px) scale(1.12)}
-}
-
 .pill{
   display:inline-flex;
   align-items:center;
@@ -167,62 +121,187 @@ header{min-height:78px;display:flex;align-items:center;justify-content:space-bet
   font-size:12px;
   font-weight:800;
   letter-spacing:.07em;
-  box-shadow:0 4px 14px rgba(255,184,28,0.16);
-  animation:floatSoft 5s ease-in-out infinite;
 }
-.dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#e8a500;
-  box-shadow:0 0 0 5px #ffcf5638;
-  animation:pulseSoft 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-@keyframes pulseSoft{
-  0%,100%{box-shadow:0 0 0 5px #ffcf5638}
-  50%{box-shadow:0 0 0 11px #ffcf5606}
-}
-@keyframes floatSoft{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-7px)}
-}
-
-h1{
-  font-size:clamp(38px,6vw,72px);
-  line-height:1.06;
-  letter-spacing:-.05em;
-  max-width:980px;
-  margin:25px auto 20px;
-  animation:fadeSpring 0.85s var(--spring) both;
-}
-h1 span,.accent{color:#e9a300}
-.lead{
-  font-size:clamp(16px,1.9vw,20px);
-  line-height:1.8;
-  color:var(--muted);
-  max-width:870px;
-  margin:0 auto 32px;
-  animation:fadeSpring 0.85s 0.12s var(--spring) both;
-}
-@keyframes fadeSpring{
-  from{opacity:0;transform:translateY(22px)}
-  to{opacity:1;transform:translateY(0)}
-}
+.dot{width:8px;height:8px;border-radius:50%;background:#e8a500;box-shadow:0 0 0 5px #ffcf5638;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 5px #ffcf5638}50%{box-shadow:0 0 0 10px #ffcf5606}}
+h1{font-size:clamp(36px,5.8vw,68px);line-height:1.08;letter-spacing:-.05em;max-width:980px;margin:24px auto 18px}
+h1 span{color:var(--teal)}
+.lead{font-size:clamp(16px,1.8vw,19.5px);line-height:1.75;color:var(--muted);max-width:870px;margin:0 auto 30px}
 .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .fine{font-size:12.5px;color:var(--muted);margin-top:18px}
 .status{display:none;max-width:650px;margin:17px auto 0;padding:12px 15px;border-radius:12px;background:#fff4d6;color:#755200;font-size:14px}
 .status.show{display:block}
-.trustline{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;color:#334155;font-size:12.5px;font-weight:650;margin-top:34px}
-.trustline span:before{content:"✓";color:#0284c7;font-weight:900;margin-right:8px}
+.trustline{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;color:#334155;font-size:12.5px;font-weight:650;margin-top:32px}
+.trustline span:before{content:"✓";color:var(--teal);font-weight:900;margin-right:8px}
 
-/* Alternating Section Colors */
-.section{padding:84px 0}
+/* ===== HERO INTERACTIVE TRIPLE SHOWCASE (IMAGE 2 DESIGN) ===== */
+.hero-showcase-section{
+  background:#051323;
+  color:#fff;
+  border-radius:28px;
+  padding:46px 36px;
+  margin:40px auto 30px;
+  box-shadow:0 25px 65px rgba(0,0,0,0.45);
+  border:1px solid #143555;
+}
+.showcase-header{text-align:center;margin-bottom:34px}
+.showcase-header h2{font-size:clamp(26px,3.8vw,42px);margin:0 0 10px;letter-spacing:-.03em}
+.showcase-header h2 span{color:var(--teal)}
+.showcase-header p{margin:0;color:#94a3b8;font-size:15px;max-width:640px;margin-inline:auto}
+.triple-cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:38px;
+}
+.showcase-card{
+  background:#092138;
+  border:1px solid #173d63;
+  border-radius:18px;
+  padding:24px 22px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.showcase-card h3{margin:0 0 4px;font-size:18px;color:#fff}
+.showcase-card p.sub{margin:0 0 16px;font-size:12px;color:#94a3b8}
+.showcase-input{
+  width:100%;
+  padding:10px 12px;
+  background:#061727;
+  border:1px solid #163654;
+  border-radius:10px;
+  color:#fff;
+  font-size:13px;
+  margin-bottom:10px;
+  outline:none;
+}
+.showcase-input:focus{border-color:#00f2fe}
+.showcase-btn{
+  width:100%;
+  padding:11px;
+  border-radius:10px;
+  border:none;
+  font-weight:800;
+  font-size:13.5px;
+  cursor:pointer;
+  transition:.2s;
+}
+.showcase-btn-teal{background:var(--teal);color:#071a2e}
+.showcase-btn-teal:hover{background:#00e5a3}
+.showcase-btn-blue{background:#0284c7;color:#fff}
+.showcase-btn-blue:hover{background:#0369a1}
+.radio-gateways-list{
+  display:grid;
+  gap:6px;
+  max-height:150px;
+  overflow-y:auto;
+  margin:10px 0 14px;
+  padding-right:4px;
+}
+.radio-gateway-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#061727;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:12px;
+  color:#cbd5e1;
+  cursor:pointer;
+  border:1px solid #132f4c;
+}
+.radio-gateway-item:hover{border-color:#00f2fe}
+
+/* Auth Architecture Cards */
+.auth-providers-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-bottom:34px;
+}
+.auth-provider-card{
+  background:#081c30;
+  border:1px solid #173859;
+  border-radius:16px;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.auth-provider-card .icon-logo{width:46px;height:46px;object-fit:contain}
+.auth-provider-card h4{margin:0 0 2px;font-size:16px;color:#fff}
+.auth-provider-card p{margin:0;font-size:12px;color:#94a3b8}
+
+/* 4 Platform Pillars (Image 2) */
+.pillars-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:28px;
+}
+.pillar-card{
+  background:#081c30;
+  border:1px solid #163654;
+  border-radius:16px;
+  padding:20px 18px;
+  text-align:left;
+  transition:all .25s var(--spring);
+}
+.pillar-card:hover{border-color:#00f2fe;transform:translateY(-3px)}
+.pillar-icon{font-size:24px;margin-bottom:12px;color:#00f2fe}
+.pillar-card h4{margin:0 0 6px;font-size:16px;color:#fff}
+.pillar-card p{margin:0;font-size:12.5px;color:#94a3b8;line-height:1.55}
+
+/* 24/7 Security Monitoring Bar */
+.security-monitor-bar{
+  background:#061626;
+  border:1px solid #163d63;
+  border-radius:18px;
+  padding:16px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.sec-left{display:flex;align-items:center;gap:16px}
+.sec-shield{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  background:#042f48;
+  color:#00f2fe;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  border:1px solid #085580;
+}
+.sec-text strong{font-size:14px;color:#fff;display:block}
+.sec-text span{font-size:12px;color:#94a3b8}
+.sec-pills{display:flex;gap:12px;flex-wrap:wrap}
+.sec-pill-tag{
+  background:#0b2540;
+  border:1px solid #174d7a;
+  color:#00e5a3;
+  padding:6px 14px;
+  border-radius:99px;
+  font-size:12px;
+  font-weight:750;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+/* Sections */
+.section{padding:82px 0}
 .section-white{background:#fff;border-block:1px solid var(--line)}
 .section-grey{background:var(--bg-grey);border-block:1px solid var(--bg-grey-border)}
-.section-head{text-align:center;max-width:820px;margin:0 auto 38px}
+.section-head{text-align:center;max-width:820px;margin:0 auto 36px}
 .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#b07c00;font-weight:850;margin:0 0 10px}
-.section h2{font-size:clamp(28px,4vw,43px);line-height:1.14;letter-spacing:-.035em;margin:0 0 13px}
-.sub{color:var(--muted);font-size:16px;margin:0}
+.section h2{font-size:clamp(28px,3.8vw,42px);line-height:1.15;letter-spacing:-.035em;margin:0 0 12px}
+.sub{color:var(--muted);font-size:15.5px;margin:0}
 
 /* Cards & Grid */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
@@ -231,104 +310,77 @@ h1 span,.accent{color:#e9a300}
   border:1px solid var(--line);
   border-radius:var(--radius);
   padding:28px 26px;
-  box-shadow:0 8px 26px rgba(11,79,108,0.04);
-  transition:transform .32s var(--spring),border-color .32s var(--smooth),box-shadow .32s var(--spring);
+  box-shadow:0 8px 24px rgba(11,79,108,0.04);
+  transition:all .3s var(--spring);
 }
-.card:hover{transform:translateY(-8px);border-color:#38bdf8;box-shadow:var(--shadow)}
-.icon{
-  width:48px;
-  height:48px;
-  border-radius:15px;
-  background:#fff3cf;
-  color:#9b6b00;
-  display:grid;
-  place-items:center;
-  font-size:23px;
-  margin-bottom:20px;
-  transition:transform 0.3s var(--spring);
-}
-.card:hover .icon{transform:scale(1.1) rotate(4deg)}
-.card h3{font-size:18px;line-height:1.25;margin:0 0 9px}
-.card p{font-size:14px;color:var(--muted);line-height:1.7;margin:0}
-.text-link{display:inline-flex;margin-top:18px;text-decoration:none;color:var(--skyblue);font-size:13px;font-weight:800}
+.card:hover{transform:translateY(-6px);border-color:#38bdf8;box-shadow:var(--shadow)}
+.icon{width:46px;height:46px;border-radius:14px;background:#e6fbf4;color:#009a6a;display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+.card h3{font-size:17.5px;line-height:1.25;margin:0 0 8px}
+.card p{font-size:13.5px;color:var(--muted);line-height:1.65;margin:0}
+.text-link{display:inline-flex;margin-top:16px;text-decoration:none;color:var(--skyblue);font-size:13px;font-weight:800}
 .text-link:hover{text-decoration:underline}
 
-/* Sea Blue Feature Panel */
+/* Feature Layout */
 .feature-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
 .feature-panel{
-  border-radius:26px;
+  border-radius:24px;
   background:linear-gradient(145deg,var(--seablue-deep),var(--seablue));
-  color:var(--neon-white);
-  padding:38px;
+  color:#fff;
+  padding:36px;
   position:relative;
   overflow:hidden;
-  min-height:300px;
-  box-shadow:0 22px 50px rgba(11,79,108,0.25);
+  box-shadow:0 20px 48px rgba(11,79,108,0.22);
 }
-.feature-panel:after{
-  content:"";
-  position:absolute;
-  right:-95px;
-  bottom:-130px;
-  width:290px;
-  height:290px;
-  border:1px solid rgba(56,189,248,0.25);
-  border-radius:50%;
-  box-shadow:0 0 0 24px rgba(255,255,255,0.04),0 0 0 50px rgba(56,189,248,0.05);
-}
-.feature-panel h3{font-size:26px;line-height:1.22;max-width:440px;margin:0 0 14px;position:relative;z-index:1;text-shadow:var(--neon-glow)}
-.feature-panel p{color:#e0f2fe;max-width:450px;font-size:14px;line-height:1.8;position:relative;z-index:1}
+.feature-panel h3{font-size:25px;line-height:1.22;max-width:440px;margin:0 0 12px}
+.feature-panel p{color:#e0f2fe;max-width:440px;font-size:14px;line-height:1.75}
 .feature-panel .tag{
   display:inline-flex;
   border:1px solid #38bdf8;
   border-radius:99px;
-  padding:7px 12px;
+  padding:6px 12px;
   font-size:11px;
   color:#38bdf8;
   background:rgba(56,189,248,0.12);
-  margin-bottom:22px;
-  position:relative;
-  z-index:1;
+  margin-bottom:20px;
   font-weight:800;
-  letter-spacing:.05em;
 }
-.feature-list{display:grid;gap:14px}
+.feature-list{display:grid;gap:12px}
 .feature-row{
   display:flex;
   gap:16px;
-  padding:20px;
+  padding:18px 20px;
   background:#fff;
   border:1px solid var(--line);
-  border-radius:18px;
-  transition:transform .28s var(--spring),border-color .25s var(--smooth),box-shadow .28s var(--spring);
+  border-radius:16px;
+  transition:transform .25s var(--spring);
 }
-.feature-row:hover{transform:translateX(6px);border-color:#38bdf8;box-shadow:0 10px 28px rgba(11,79,108,0.06)}
+.feature-row:hover{transform:translateX(5px);border-color:#38bdf8}
 .check{flex:0 0 28px;width:28px;height:28px;border-radius:99px;background:#e0f2fe;color:var(--skyblue);display:grid;place-items:center;font-weight:900}
 .feature-row h3{font-size:15px;margin:0 0 4px}
-.feature-row p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+.feature-row p{font-size:13px;color:var(--muted);margin:0;line-height:1.55}
 
 /* Hosting Features Grid */
-.hosting-features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:14px}
+.hosting-features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:14px}
 .host-feature-item{
   background:#fff;
   border:1px solid var(--line);
   border-radius:18px;
-  padding:24px;
-  transition:all 0.28s var(--spring);
+  padding:22px;
+  transition:all .28s var(--spring);
 }
 .host-feature-item:hover{transform:translateY(-4px);border-color:#38bdf8;box-shadow:var(--shadow)}
-.host-feature-item h4{margin:0 0 6px;font-size:16px;color:#0f172a}
-.host-feature-item p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.65}
+.host-feature-item h4{margin:0 0 6px;font-size:15.5px;color:#0f172a}
+.host-feature-item p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
 
 /* Frameworks Grid */
-.framework-suite{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.framework-suite{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
 .framework-card{
   background:#fff;
   border:1px solid var(--line);
   border-radius:18px;
-  padding:20px 22px;
+  padding:20px;
   text-align:left;
-  transition:transform .28s var(--spring),border-color .25s var(--smooth),box-shadow .28s var(--spring);
+  transition:all .28s var(--spring);
 }
 .framework-card:hover{transform:translateY(-4px);border-color:#38bdf8;box-shadow:var(--shadow)}
 .framework-card .badge{
@@ -336,26 +388,18 @@ h1 span,.accent{color:#e9a300}
   background:var(--skyblue-light);
   color:var(--skyblue);
   border:1px solid #bae6fd;
-  padding:4px 10px;
+  padding:4px 9px;
   border-radius:99px;
   font-size:11px;
   font-weight:800;
-  margin-bottom:10px;
-  letter-spacing:.04em;
+  margin-bottom:8px;
 }
-.framework-card h3{margin:0 0 6px;font-size:16px;color:#0f172a}
-.framework-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
+.framework-card h3{margin:0 0 6px;font-size:15.5px;color:#0f172a}
+.framework-card p{margin:0;font-size:12.8px;color:var(--muted);line-height:1.6}
 
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:steps}
-.step{
-  padding:26px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  transition:transform .28s var(--spring),box-shadow .28s var(--spring);
-}
-.step:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.step{padding:24px;background:#fff;border:1px solid var(--line);border-radius:18px}
 .step:before{
   counter-increment:steps;
   content:"0" counter(steps);
@@ -364,289 +408,753 @@ h1 span,.accent{color:#e9a300}
   font-size:13px;
   font-weight:900;
   letter-spacing:.08em;
-  margin-bottom:18px;
+  margin-bottom:14px;
 }
-.step h3{margin:0 0 7px;font-size:17px}
-.step p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+.step h3{margin:0 0 6px;font-size:16.5px}
+.step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.65}
 
 /* CTA */
 .cta{
-  margin:0 0 72px;
+  margin:0 0 70px;
   background:linear-gradient(125deg,var(--seablue-deep) 0%,var(--seablue) 60%,#0369a1 100%);
-  border-radius:28px;
+  border-radius:26px;
   color:#fff;
-  padding:50px 26px;
+  padding:48px 24px;
   text-align:center;
   position:relative;
   overflow:hidden;
-  box-shadow:0 25px 65px rgba(11,79,108,0.25);
+  box-shadow:0 24px 60px rgba(11,79,108,0.22);
 }
-.cta:before{content:"";position:absolute;inset:-50%;background:radial-gradient(circle at 50% 0%,#38bdf826,transparent 42%);pointer-events:none}
-.cta>*{position:relative}
-.cta h2{font-size:clamp(28px,4vw,42px);margin:0 0 12px;text-shadow:var(--neon-glow)}
-.cta p{color:#e0f2fe;max-width:700px;margin:0 auto 24px;line-height:1.8}
+.cta h2{font-size:clamp(26px,3.8vw,40px);margin:0 0 12px}
+.cta p{color:#e0f2fe;max-width:680px;margin:0 auto 22px;line-height:1.75}
 
-/* Enterprise Footer */
-.footer{background:#0a1926;color:#c8d3df;padding:58px 0 28px;border-top:1px solid #162a3d}
-.footer-top{display:grid;grid-template-columns:1.2fr 2.8fr;gap:42px;padding-bottom:38px;border-bottom:1px solid #ffffff14}
-.footer-brand p{font-size:13px;line-height:1.8;color:#9eacbd;max-width:340px}
-.footer-brand .brand-wordmark{color:#fff;font-size:25px}
-.footer-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
-.footer-col h3{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#38bdf8;margin:3px 0 14px}
-.footer-links{display:grid;gap:8.5px}
-.footer-links a{color:#aebaca;font-size:12.5px;margin:0}
+/* ===== 5-ITEM TRUST & SECURITY RIBBON (IMAGE 1 DESIGN) ===== */
+.trust-ribbon{
+  background:#051323;
+  border-top:1px solid #143555;
+  border-bottom:1px solid #143555;
+  padding:22px 0;
+  color:#e2e8f0;
+}
+.trust-ribbon-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+}
+.trust-ribbon-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.trust-ribbon-icon{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  background:#09243f;
+  border:1px solid #14406a;
+  display:grid;
+  place-items:center;
+  font-size:18px;
+  color:#00f2fe;
+  flex-shrink:0;
+}
+.trust-ribbon-item strong{font-size:13px;display:block;color:#fff}
+.trust-ribbon-item span{font-size:11.5px;color:#94a3b8}
+
+/* ===== ENTERPRISE DUAL FOOTER (IMAGE 1 EXACT DESIGN) ===== */
+.footer{background:#071524;color:#c8d3df;padding:54px 0 24px}
+.footer-top{display:grid;grid-template-columns:1.2fr 2.8fr;gap:40px;padding-bottom:34px;border-bottom:1px solid #ffffff12}
+.footer-brand p{font-size:13px;line-height:1.75;color:#94a3b8;max-width:330px}
+.footer-brand .brand-wordmark{color:#fff;font-size:24px}
+.footer-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.footer-col h3{font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;color:#00f2fe;margin:3px 0 12px;font-weight:800}
+.footer-links{display:grid;gap:8px}
+.footer-links a{color:#a8b6c8;font-size:12.5px;margin:0;text-decoration:none}
 .footer-links a:hover{color:#ffca43}
-.footer-meta-block{padding-top:14px;font-size:12px;color:#94a3b8;line-height:1.7}
-.footer-meta-block strong{color:#e2e8f0;display:block;margin-bottom:3px}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;padding-top:24px;font-size:12px;color:#93a2b5}
+
+/* Second Row: Newsletter, Accepted Payments & Apps */
+.footer-mid-row{
+  display:grid;
+  grid-template-columns:1fr 1.2fr 0.8fr;
+  gap:32px;
+  padding:36px 0 28px;
+  border-bottom:1px solid #ffffff12;
+  align-items:center;
+}
+.social-icons-tray{display:flex;gap:10px;margin-top:14px}
+.social-icon-btn{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#0e2439;
+  border:1px solid #183e63;
+  display:grid;
+  place-items:center;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:13px;
+  transition:.2s;
+}
+.social-icon-btn:hover{background:#00c48c;color:#071a2e}
+.newsletter-form{display:flex;gap:8px;margin-top:10px}
+.newsletter-form input{
+  flex:1;
+  padding:10px 14px;
+  background:#092138;
+  border:1px solid #173d63;
+  border-radius:10px;
+  color:#fff;
+  font-size:13px;
+  outline:none;
+}
+.newsletter-form input:focus{border-color:#00f2fe}
+.newsletter-form button{
+  padding:10px 18px;
+  background:#0284c7;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-weight:750;
+  font-size:13px;
+  cursor:pointer;
+  transition:.2s;
+}
+.newsletter-form button:hover{background:#0369a1}
+.app-downloads{display:flex;gap:10px;margin-top:8px}
+.app-badge-btn{
+  background:#092138;
+  border:1px solid #173d63;
+  border-radius:10px;
+  padding:6px 12px;
+  color:#fff;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+}
+.accepted-payments-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.pay-pill{
+  height:30px;
+  padding:4px 10px;
+  background:#092138;
+  border:1px solid #173d63;
+  border-radius:7px;
+  display:flex;
+  align-items:center;
+  font-size:11px;
+  font-weight:800;
+  color:#e2e8f0;
+}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;padding-top:22px;font-size:12px;color:#8596ac}
 .footer-bottom a{color:#dce5ee;text-decoration:none}
 .footer-bottom a:hover{text-decoration:underline}
 
-/* Reveal */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s var(--smooth),transform 0.75s var(--spring);will-change:opacity,transform}
-.reveal.in-view{opacity:1;transform:translateY(0)}
-.delay-1{transition-delay:0.1s}
-.delay-2{transition-delay:0.2s}
-.delay-3{transition-delay:0.3s}
-
-/* ===== AUTH MODALS ===== */
+/* ===== MODAL: WORLDWIDE REGISTRATION & LOGIN (IMAGE 2 DESIGN) ===== */
 .auth-overlay{
   position:fixed;
   inset:0;
-  background:rgba(10,25,38,.78);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  background:rgba(3,10,18,0.86);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   z-index:100;
   display:none;
   align-items:center;
   justify-content:center;
   padding:20px;
-  opacity:0;
-  transition:opacity 0.28s var(--smooth);
+  overflow-y:auto;
 }
-.auth-overlay.show{display:flex;opacity:1}
-.auth-modal{
-  background:#fff;
-  border-radius:24px;
-  width:min(440px,100%);
-  padding:32px 28px;
-  box-shadow:0 30px 75px rgba(0,0,0,.3);
+.auth-overlay.show{display:flex}
+.auth-shell{
+  width:min(980px,100%);
+  background:#051323;
+  border:1px solid #13334f;
+  border-radius:28px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.65),0 0 60px rgba(0,196,140,0.1);
+  overflow:hidden;
   position:relative;
-  transform:scale(0.95) translateY(12px);
-  transition:transform 0.3s var(--spring);
+  display:flex;
+  flex-direction:column;
+  animation:popIn .3s var(--spring);
 }
-.auth-overlay.show .auth-modal{transform:scale(1) translateY(0)}
-.auth-modal h2{margin:0 0 6px;font-size:23px;letter-spacing:-.03em}
-.auth-modal .sub{font-size:13.5px;color:var(--muted);margin-bottom:20px}
-.auth-modal label{display:block;font-size:12.5px;font-weight:700;margin:0 0 6px;color:#334155}
-.auth-modal input{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid #dce4ed;
-  border-radius:11px;
-  font-size:14px;
-  margin-bottom:14px;
-  outline:none;
-  transition:border .2s var(--smooth),box-shadow .2s var(--smooth);
-  background:#fff;
-}
-.auth-modal input:focus{border-color:var(--skyblue);box-shadow:0 0 0 3px rgba(2,132,199,0.18)}
-.auth-modal .btn-submit{width:100%;margin-top:6px;padding:13px;font-size:15px}
-.auth-modal .switch{text-align:center;margin-top:16px;font-size:13px;color:var(--muted)}
-.auth-modal .switch a{color:var(--skyblue);font-weight:700;cursor:pointer;text-decoration:none}
-.auth-modal .switch a:hover{text-decoration:underline}
-.auth-modal .close-btn{
+@keyframes popIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.auth-close-x{
   position:absolute;
   top:16px;
-  right:16px;
-  background:none;
-  border:none;
-  font-size:24px;
-  cursor:pointer;
+  right:18px;
+  background:#0e2439;
+  border:1px solid #1b3d5d;
   color:#94a3b8;
-  line-height:1;
-  border-radius:8px;
-  width:32px;
-  height:32px;
+  font-size:22px;
+  border-radius:50%;
+  width:36px;
+  height:36px;
   display:grid;
   place-items:center;
-  transition:all .2s var(--smooth);
+  cursor:pointer;
+  z-index:10;
+  transition:.2s;
 }
-.auth-modal .close-btn:hover{background:#f1f5f9;color:#334155}
+.auth-close-x:hover{color:#fff;background:#163a5b}
+.auth-body-split{display:grid;grid-template-columns:1fr 1.05fr}
+.auth-side-perks{
+  padding:38px 32px;
+  background:radial-gradient(circle at 10% 20%,#092644 0%,#051323 80%);
+  border-right:1px solid #13334f;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.auth-side-perks h2{font-size:25px;line-height:1.2;margin:12px 0 6px}
+.auth-side-perks h2 span{color:#00e5a3}
+.auth-side-perks p.desc{font-size:13px;color:#94a3b8;line-height:1.6;margin:0 0 20px}
+.perk-wip-card{
+  background:#092138;
+  border:1px solid #153c61;
+  border-radius:16px;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:22px;
+}
+.perk-wip-card .icon-box{width:38px;height:38px;border-radius:10px;background:#03445e;color:#00f2fe;display:grid;place-items:center;font-size:18px}
+.perk-wip-card strong{font-size:13px;color:#e2e8f0;display:block}
+.perk-wip-card span{font-size:11.5px;color:#94a3b8}
+.perks-list{display:grid;gap:12px;margin-bottom:20px}
+.perk-row{display:flex;align-items:flex-start;gap:12px}
+.perk-icon-wrap{
+  width:32px;
+  height:32px;
+  border-radius:9px;
+  background:#092a48;
+  color:#00e5a3;
+  display:grid;
+  place-items:center;
+  font-size:14px;
+  flex-shrink:0;
+  border:1px solid #124773;
+}
+.perk-row h4{margin:0;font-size:13px;color:#f1f5f9}
+.perk-row p{margin:2px 0 0;font-size:11.5px;color:#94a3b8;line-height:1.4}
+.perk-footer-quote{
+  font-family:cursive,sans-serif;
+  color:#00f2fe;
+  font-size:20px;
+  margin-top:14px;
+  transform:rotate(-2deg);
+}
 
-/* Social Buttons */
-.social-buttons{display:grid;gap:9px;margin-bottom:16px}
-.btn-social{
+/* Auth Form Side */
+.auth-form-side{padding:34px 32px;background:#07172b;color:#fff}
+.auth-tabs-toggle{
+  display:flex;
+  background:#030d19;
+  border:1px solid #122841;
+  border-radius:14px;
+  padding:4px;
+  margin-bottom:24px;
+}
+.auth-tab-btn{
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  background:none;
+  border:none;
+  color:#94a3b8;
+  font-weight:750;
+  font-size:13.5px;
+  cursor:pointer;
+  transition:.2s;
+}
+.auth-tab-btn.active{
+  background:linear-gradient(135deg,#00f2fe,#00c48c);
+  color:#071a2e;
+  box-shadow:0 4px 14px rgba(0,196,140,0.3);
+}
+.auth-form-side h3{margin:0 0 4px;font-size:22px;letter-spacing:-.02em}
+.auth-form-side p.subtext{margin:0 0 20px;font-size:12.5px;color:#94a3b8}
+.form-names-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field-group{margin-bottom:12px;position:relative}
+.field-group input, .field-group select{
+  width:100%;
+  padding:12px 14px 12px 40px;
+  background:#0b2138;
+  border:1px solid #173859;
+  border-radius:12px;
+  color:#fff;
+  font-size:13.5px;
+  outline:none;
+  transition:border .2s;
+}
+.field-group input:focus, .field-group select:focus{border-color:#00f2fe;box-shadow:0 0 0 3px rgba(0,242,254,0.15)}
+.field-icon{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#5a7b9d;
+  font-size:15px;
+  pointer-events:none;
+}
+.eye-toggle{
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#5a7b9d;
+  cursor:pointer;
+  font-size:16px;
+  background:none;
+  border:none;
+}
+
+/* Worldwide Phone Selector Box */
+.phone-box-worldwide{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:8px;
+}
+.country-select{
+  background:#0b2138;
+  border:1px solid #173859;
+  border-radius:12px;
+  color:#fff;
+  font-size:12px;
+  padding:10px;
+  outline:none;
+  cursor:pointer;
+}
+.country-select option{background:#07172b;color:#fff}
+.terms-label{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:12px;
+  color:#94a3b8;
+  margin:14px 0 18px;
+  cursor:pointer;
+}
+.terms-label input{accent-color:#00c48c}
+.terms-label a{color:#00f2fe;text-decoration:none}
+.btn-auth-action{
+  width:100%;
+  padding:13px;
+  background:linear-gradient(135deg,#00f2fe,#00c48c);
+  color:#071a2e;
+  border:none;
+  border-radius:12px;
+  font-size:14.5px;
+  font-weight:800;
+  cursor:pointer;
+  transition:all .2s;
+}
+.btn-auth-action:hover{box-shadow:0 6px 20px rgba(0,196,140,0.4)}
+.auth-split-line{
+  text-align:center;
+  position:relative;
+  margin:18px 0;
+  color:#5a7b9d;
+  font-size:11px;
+  font-weight:750;
+  letter-spacing:.08em;
+}
+.auth-split-line:before,.auth-split-line:after{content:"";position:absolute;top:50%;width:42%;height:1px;background:#143454}
+.auth-split-line:before{left:0}.auth-split-line:after{right:0}
+.btn-google-oauth{
+  width:100%;
+  padding:11px 14px;
+  background:#081b30;
+  border:1px solid #183e63;
+  color:#e2e8f0;
+  border-radius:12px;
+  font-size:13.5px;
+  font-weight:700;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:11px;
-  width:100%;
-  padding:11px 14px;
-  border-radius:11px;
-  border:1px solid #dce4ed;
-  background:#fff;
-  color:#1e293b;
-  font-size:13.5px;
-  font-weight:700;
+  gap:10px;
   cursor:pointer;
-  transition:all .22s var(--spring);
+  transition:.2s;
 }
-.btn-social:hover{background:#f8fafc;border-color:#38bdf8;transform:translateY(-1px)}
-.btn-social:active{transform:scale(0.98)}
-.btn-social svg{width:18px;height:18px;flex-shrink:0}
-.auth-divider{
+.btn-google-oauth:hover{background:#0e2947;border-color:#00f2fe}
+.auth-switch-foot{text-align:center;font-size:12.5px;color:#94a3b8;margin-top:16px}
+.auth-switch-foot a{color:#00e5a3;font-weight:750;cursor:pointer}
+.auth-bottom-banner{
+  background:#020912;
+  border-top:1px solid #112d47;
+  padding:14px 28px;
   display:flex;
   align-items:center;
-  text-align:center;
-  margin:16px 0;
-  color:#94a3b8;
-  font-size:11.5px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.05em;
+  justify-content:space-between;
+  gap:16px;
 }
-.auth-divider::before,.auth-divider::after{content:'';flex:1;border-bottom:1px solid #e2e8f0}
-.auth-divider span{padding:0 10px}
-
-/* Alerts */
-.auth-error{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:10px;padding:11px 13px;font-size:13px;margin-bottom:14px;display:none;line-height:1.45}
+.auth-bottom-banner .msg{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#94a3b8}
+.auth-bottom-banner .msg strong{color:#00e5a3}
+.auth-bottom-banner .btn-banner-wait{
+  background:#00e5a3;
+  color:#061a2b;
+  border:none;
+  padding:8px 16px;
+  border-radius:99px;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.auth-error{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:10px;padding:11px 13px;font-size:13px;margin-bottom:14px;display:none}
 .auth-error.show{display:block}
-.auth-success{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;border-radius:10px;padding:11px 13px;font-size:13px;margin-bottom:14px;display:none;line-height:1.45}
+.auth-success{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;border-radius:10px;padding:11px 13px;font-size:13px;margin-bottom:14px;display:none}
 .auth-success.show{display:block}
 
-/* ===== DASHBOARD (Operational & Usage Centric) ===== */
-#dashboard-view{display:none;min-height:100vh;background:#f0f4f8}
-#dashboard-view.show{display:block;animation:fadeSpring 0.38s var(--spring) both}
-.dash-layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
-.dash-sidebar{background:#0a1926;color:#e2e8f0;padding:22px 16px;display:flex;flex-direction:column}
-.dash-logo{font-weight:900;font-size:19px;color:#fff;margin-bottom:28px;display:flex;align-items:center;gap:10px}
-.dash-logo span{
+/* ===== ADVANCED LIGHT DASHBOARD (IMAGE 1 EXACT DESIGN) ===== */
+#dashboard-view{display:none;min-height:100vh;background:#f3f6f9}
+#dashboard-view.show{display:block}
+.d-shell{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+.d-sidebar{
+  background:#fff;
+  border-right:1px solid #e5e9f0;
+  padding:20px 14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.d-brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:900;color:#0b2138;margin-bottom:24px;padding:0 8px}
+.d-brand-icon{
   width:32px;
   height:32px;
-  background:linear-gradient(135deg,#ffb81c,#0284c7);
-  border-radius:9px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#00f2fe,#00c48c);
   display:grid;
   place-items:center;
-  color:#0f172a;
+  color:#071a2e;
   font-weight:900;
 }
-.dash-nav a{
+.d-nav{display:grid;gap:3px}
+.d-nav a{
   display:flex;
   align-items:center;
   gap:10px;
-  padding:10px 12px;
+  padding:9px 12px;
   border-radius:10px;
   font-size:13.5px;
-  color:#94a3b8;
+  color:#475569;
   text-decoration:none;
-  margin-bottom:3px;
-  transition:.18s var(--smooth);
+  font-weight:600;
+  transition:.15s;
 }
-.dash-nav a:hover,.dash-nav a.active{background:#162a3d;color:#38bdf8}
-.dash-nav .section-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#64748b;margin:18px 0 8px 12px;font-weight:700}
-.dash-main{padding:30px 36px;max-width:1400px}
-.dash-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:28px;
-  flex-wrap:wrap;
-  gap:16px;
-}
-.dash-header h1{font-size:24px;margin:0;letter-spacing:-.03em}
-.dash-header p{margin:4px 0 0;color:var(--muted);font-size:14px}
-.dash-user{display:flex;align-items:center;gap:12px;font-size:14px}
-.dash-avatar{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  background:#0284c7;
-  color:#fff;
+.d-nav a:hover{background:#f1f5f9;color:#0b2138}
+.d-nav a.active{background:#e8f4fc;color:#0877b9;font-weight:750}
+.d-nav .nav-badge{
+  margin-left:auto;
+  background:#dcfce7;
+  color:#15803d;
+  font-size:10px;
   font-weight:800;
-  display:grid;
-  place-items:center;
-  object-fit:cover;
-  border:2px solid #fff;
-  box-shadow:0 3px 10px rgba(0,0,0,.08);
+  padding:2px 7px;
+  border-radius:99px;
 }
-.dash-user-meta{display:flex;flex-direction:column;text-align:right}
-.dash-user-meta .user-name{font-weight:750;color:#0f172a}
-.dash-user-meta .user-email{font-size:12px;color:var(--muted)}
-.btn-signout{
+.d-nav .nav-badge.beta{background:#e0f2fe;color:#0369a1}
+.d-nav-sep{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#94a3b8;
+  font-weight:800;
+  margin:18px 0 6px 10px;
+}
+.d-subnav{padding-left:14px;display:grid;gap:2px}
+.d-subnav a{font-size:12.5px;padding:6px 10px;color:#64748b}
+.d-help-box{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:14px;
+  padding:14px;
+  margin-top:20px;
+}
+.d-help-box strong{font-size:12.5px;color:#0f172a;display:block;margin-bottom:2px}
+.d-help-box p{margin:0 0 10px;font-size:11.5px;color:#64748b;line-height:1.4}
+.d-help-box button{
+  width:100%;
+  padding:7px;
   background:#fff;
   border:1px solid #cbd5e1;
-  border-radius:10px;
-  padding:8px 15px;
-  font-size:13px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:750;
   cursor:pointer;
-  font-weight:700;
   color:#334155;
-  transition:all .2s var(--smooth);
 }
-.btn-signout:hover{background:#fee2e2;color:#991b1b;border-color:#fca5a5;transform:translateY(-1px)}
-
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
-.stat-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:22px;
-  transition:transform .28s var(--spring),box-shadow .28s var(--spring);
-}
-.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.stat-card .label{font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:600}
-.stat-card .value{font-size:26px;font-weight:800;letter-spacing:-.03em;color:#0f172a}
-.stat-card .note{font-size:12px;color:#94a3b8;margin-top:6px}
-
-.coming-soon-banner{
-  background:linear-gradient(90deg,#f0f9ff,#e0f2fe);
-  border:1px solid #bae6fd;
-  border-radius:14px;
-  padding:16px 20px;
-  margin-bottom:24px;
+.d-main{padding:20px 30px}
+.d-topbar{
   display:flex;
   align-items:center;
-  gap:14px;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px;
 }
-.coming-soon-banner strong{color:#0369a1}
-.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px}
-.panel h3{margin:0 0 10px;font-size:16px;display:flex;align-items:center;justify-content:space-between}
-.panel p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
-.info-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid #f1f5f9;font-size:13.5px}
-.info-row:last-child{border-bottom:none}
-.info-label{width:160px;color:var(--muted);font-weight:600}
-.info-value{color:#0f172a;font-weight:650;overflow-wrap:anywhere}
-.soon-badge{display:inline-block;background:#e0f2fe;color:#0369a1;font-size:11px;font-weight:800;padding:3px 9px;border-radius:99px;margin-left:8px}
+.d-search{flex:1;max-width:440px;position:relative}
+.d-search input{
+  width:100%;
+  padding:10px 14px 10px 36px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+  font-size:13.5px;
+  outline:none;
+}
+.d-search input:focus{border-color:#38bdf8}
+.d-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:14px}
+.d-user-corner{display:flex;align-items:center;gap:16px}
+.d-notif-btn{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  display:grid;
+  place-items:center;
+  color:#64748b;
+  cursor:pointer;
+  position:relative;
+}
+.d-notif-badge{width:8px;height:8px;border-radius:50%;background:#ef4444;position:absolute;top:6px;right:6px}
+.d-profile-pill{display:flex;align-items:center;gap:10px;text-align:right}
+.d-avatar-initials{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#1e3a5f;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:14px;
+}
+.d-profile-pill .name{font-size:13px;font-weight:750;color:#0f172a}
+.d-profile-pill .role{font-size:11.5px;color:#64748b}
+.d-greeting{margin-bottom:24px}
+.d-greeting h1{font-size:24px;margin:0 0 4px;letter-spacing:-.02em}
+.d-greeting p{margin:0;font-size:13.5px;color:var(--muted)}
+.d-stats-4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:20px;
+}
+.d-stat-box{
+  background:#fff;
+  border:1px solid #e5e9f0;
+  border-radius:16px;
+  padding:18px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 4px 12px rgba(0,0,0,0.02);
+}
+.d-stat-head{display:flex;align-items:center;gap:10px;font-size:13px;color:#64748b;font-weight:650}
+.d-stat-icon{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:15px;color:#fff}
+.d-stat-icon.green{background:#10b981}
+.d-stat-icon.blue{background:#0284c7}
+.d-stat-icon.gold{background:#f59e0b}
+.d-stat-icon.red{background:#ef4444}
+.d-stat-value{font-size:24px;font-weight:800;color:#0f172a;margin:12px 0 6px}
+.d-stat-spark{height:32px;width:100%}
+.d-middle-grid{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:20px;
+  margin-bottom:20px;
+}
+.d-card{
+  background:#fff;
+  border:1px solid #e5e9f0;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.02);
+}
+.d-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.d-card-head h3{font-size:15px;margin:0;color:#0f172a;font-weight:750}
+.d-legend{display:flex;align-items:center;gap:12px;font-size:11.5px;color:#64748b}
+.d-legend-item{display:flex;align-items:center;gap:5px}
+.d-legend-dot{width:8px;height:8px;border-radius:50%}
+.d-charts-split{display:grid;grid-template-columns:1.2fr 0.9fr;gap:18px}
+.d-bar-chart-mock{
+  height:190px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-around;
+  padding-bottom:10px;
+  border-bottom:1px solid #f1f5f9;
+}
+.d-bar-group{width:24px;display:flex;flex-direction:column-reverse;gap:2px}
+.d-bar{border-radius:4px;width:100%}
+.d-donut-mock{
+  height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+.donut-circle{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:conic-gradient(#10b981 0% 45%,#0284c7 45% 70%,#a855f7 70% 85%,#f59e0b 85% 95%,#cbd5e1 95% 100%);
+  display:grid;
+  place-items:center;
+}
+.donut-inner{width:68px;height:68px;border-radius:50%;background:#fff}
+.d-actions-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.d-action-tile{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:12px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  font-size:11px;
+  font-weight:750;
+  color:#334155;
+  cursor:pointer;
+  text-align:center;
+  transition:.18s;
+}
+.d-action-tile:hover{background:#fff;border-color:#38bdf8;box-shadow:0 4px 12px rgba(0,0,0,0.04);transform:translateY(-2px)}
+.d-action-icon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:15px}
+.d-balance-box{
+  background:linear-gradient(135deg,#0e4863,#072b3d);
+  color:#fff;
+  border-radius:16px;
+  padding:18px 20px;
+  margin-top:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.d-balance-val{font-size:22px;font-weight:900;letter-spacing:-.02em;margin-top:2px}
+.d-balance-box .btn-withdraw{
+  background:#fff;
+  color:#0f2b3e;
+  border:none;
+  padding:8px 14px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+.d-lower-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-bottom:20px}
+.d-empty-state{
+  text-align:center;
+  padding:44px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.d-empty-icon{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#eef6fc;
+  color:#0877b9;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  margin-bottom:12px;
+}
+.d-empty-state h4{margin:0 0 6px;font-size:16px}
+.d-empty-state p{margin:0 0 16px;font-size:13px;color:var(--muted)}
+.d-empty-state button{
+  background:#10b981;
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:10px;
+  font-weight:750;
+  font-size:13px;
+  cursor:pointer;
+}
+.d-bottom-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.d-bottom-tile{
+  background:#fff;
+  border:1px solid #e5e9f0;
+  border-radius:14px;
+  padding:14px;
+  font-size:11.5px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  transition:.2s;
+}
+.d-bottom-tile:hover{transform:translateY(-2px);border-color:#38bdf8}
+.d-bottom-tile strong{font-size:12.5px;color:#0f172a;display:flex;align-items:center;gap:6px}
+.d-bottom-tile p{margin:0;color:#64748b;line-height:1.4}
+.d-bottom-tile a{color:#0877b9;font-weight:750;text-decoration:none;margin-top:4px}
 
-@media(max-width:980px){
-  .navlinks{display:none}
-  .grid,.hosting-features-grid,.framework-suite{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer-top{grid-template-columns:1fr}
-  .footer-columns{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .section{padding:65px 0}
-  .dash-layout{grid-template-columns:1fr}
-  .dash-sidebar{display:none}
-  .stat-grid{grid-template-columns:1fr 1fr}
-  .dash-user-meta{text-align:left}
+/* In-Development Advisory Modal */
+.dev-modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(10,25,38,0.7);
+  backdrop-filter:blur(6px);
+  z-index:150;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
-@media(max-width:640px){
-  .wrap{width:min(100% - 32px,1180px)}
-  header{min-height:70px}
-  .brand-wordmark{font-size:23px}
-  .nav{gap:7px}
-  .nav .btn{font-size:12px;padding:10px 11px}
-  .hero{padding:65px 0 58px}
+.dev-modal-overlay.show{display:flex}
+.dev-modal{
+  background:#fff;
+  border-radius:20px;
+  width:min(440px,100%);
+  padding:26px 24px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  animation:popIn .25s var(--spring);
+}
+.dev-modal-icon{width:54px;height:54px;border-radius:50%;background:#e0f2fe;color:#0369a1;display:grid;place-items:center;font-size:26px;margin:0 auto 14px}
+.dev-modal h3{margin:0 0 8px;font-size:18px}
+.dev-modal p{margin:0 0 20px;font-size:13.5px;color:var(--muted);line-height:1.6}
+.dev-modal .btn-close-dev{width:100%;padding:11px;background:#0284c7;color:#fff;border:none;border-radius:10px;font-weight:750;cursor:pointer}
+
+@media(max-width:1100px){
+  .d-shell{grid-template-columns:1fr}
+  .d-sidebar{display:none}
+  .d-stats-4{grid-template-columns:1fr 1fr}
+  .d-middle-grid,.d-lower-grid{grid-template-columns:1fr}
+  .d-bottom-row{grid-template-columns:repeat(3,1fr)}
+  .triple-cards-grid{grid-template-columns:1fr}
+  .pillars-grid{grid-template-columns:1fr 1fr}
+  .trust-ribbon-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-mid-row{grid-template-columns:1fr}
+}
+@media(max-width:850px){
+  .auth-body-split{grid-template-columns:1fr}
+  .auth-side-perks{display:none}
+  .d-bottom-row{grid-template-columns:1fr 1fr}
+  .auth-providers-row{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .d-stats-4{grid-template-columns:1fr}
+  .d-charts-split{grid-template-columns:1fr}
+  .d-bottom-row{grid-template-columns:1fr}
+  .pillars-grid{grid-template-columns:1fr}
+  .trust-ribbon-grid{grid-template-columns:1fr}
   .grid,.feature-layout,.steps,.hosting-features-grid,.framework-suite{grid-template-columns:1fr}
-  .card{padding:22px}
-  .footer-columns{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:26px}
-  .stat-grid{grid-template-columns:1fr}
+  .footer-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-top{grid-template-columns:1fr}
+  .phone-box-worldwide{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ===== LANDING VIEW ROOT (Hidden completely upon login/registration) ===== -->
+<!-- ===== LANDING VIEW ROOT (Hidden completely upon live authentication) ===== -->
 <div id="landing-root">
   <div class="top">
     <header class="wrap">
@@ -684,6 +1192,130 @@ h1 span,.accent{color:#e9a300}
           <span>Firebase Authentication and Data Encryption</span>
           <span>Scalable Multi-Tenant Architecture</span>
           <span>Fast Access and Account Verification</span>
+        </div>
+
+        <!-- ===== HERO INTERACTIVE TRIPLE SHOWCASE (IMAGE 2 DESIGN) ===== -->
+        <div class="hero-showcase-section">
+          <div class="showcase-header">
+            <h2>Paddy Me. &ndash; <span>Payments, Domains, Hosting &amp; Email</span></h2>
+            <p>Integrate Paddy Me. into your website or app. Your users will register, sign in, and activate services worldwide through Paddy Me.</p>
+          </div>
+
+          <div class="triple-cards-grid">
+            <!-- 1. Create Account Card -->
+            <div class="showcase-card">
+              <div>
+                <h3>Create Account</h3>
+                <p class="sub">Register a new account</p>
+                <input type="text" class="showcase-input" placeholder="Full name">
+                <input type="email" class="showcase-input" placeholder="you@example.com">
+                <input type="password" class="showcase-input" placeholder="••••••••">
+              </div>
+              <div>
+                <button type="button" class="showcase-btn showcase-btn-teal" onclick="openAuthModal('register')">Create account</button>
+                <p style="font-size:10.5px;color:#64748b;margin:8px 0 0;text-align:center">By creating an account, you agree to our Terms and Privacy Policy.</p>
+              </div>
+            </div>
+
+            <!-- 2. Sign In Card -->
+            <div class="showcase-card">
+              <div>
+                <h3>Sign In</h3>
+                <p class="sub">Welcome back</p>
+                <input type="email" class="showcase-input" placeholder="you@example.com">
+                <input type="password" class="showcase-input" placeholder="••••••••">
+                <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:#94a3b8;margin:8px 0 16px;cursor:pointer">
+                  <input type="checkbox" checked style="accent-color:#00c48c"> Remember me
+                </label>
+              </div>
+              <div>
+                <button type="button" class="showcase-btn showcase-btn-teal" onclick="openAuthModal('login')">Sign In</button>
+                <p style="text-align:center;margin:8px 0 0"><a href="#signin" onclick="openAuthModal('login')" style="font-size:11.5px;color:#00f2fe;text-decoration:none">Forgot password?</a></p>
+              </div>
+            </div>
+
+            <!-- 3. Complete Your Payment Gateway Card -->
+            <div class="showcase-card">
+              <div>
+                <h3>Complete Your Payment</h3>
+                <p class="sub">Secure and encrypted checkout</p>
+                <div style="font-size:11.5px;color:#94a3b8">Amount: <strong style="font-size:18px;color:#fff">$49.00</strong></div>
+                <div class="radio-gateways-list">
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo" checked> Stripe <span>💳</span></label>
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo"> PayPal <span>🅿️</span></label>
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo"> Square <span>⬛</span></label>
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo"> Razorpay <span>🇮🇳</span></label>
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo"> Flutterwave <span>🌍</span></label>
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo"> Apple Pay <span>🍏</span></label>
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo"> Google Pay <span>🌐</span></label>
+                  <label class="radio-gateway-item"><input type="radio" name="gw_demo"> Visa / Mastercard <span>💳</span></label>
+                </div>
+              </div>
+              <button type="button" class="showcase-btn showcase-btn-blue" onclick="triggerInDevAdvisory()">🔒 Pay Now</button>
+            </div>
+          </div>
+
+          <!-- Authentication Providers Ribbon (Image 2) -->
+          <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#00f2fe;text-align:center;margin-bottom:14px">
+            Authentication Providers
+          </div>
+          <div class="auth-providers-row">
+            <div class="auth-provider-card">
+              <span style="font-size:32px">🔥</span>
+              <div>
+                <h4>Firebase</h4>
+                <p>Secure registration, OAuth identity and token validation powered by Google Firebase.</p>
+              </div>
+            </div>
+            <div class="auth-provider-card">
+              <span style="font-size:32px">⚡</span>
+              <div>
+                <h4>Supabase</h4>
+                <p>Row-level security, edge functions, and real-time database architecture.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Platform Pillars (Image 2) -->
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div class="pillar-icon">💳</div>
+              <h4>Payments</h4>
+              <p>Flexible and secure payments for your business. Accept local and global methods worldwide.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🌐</div>
+              <h4>Domains</h4>
+              <p>Search, register, and manage premium domains with ease. Trusted, scalable, and reliable.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🖥️</div>
+              <h4>Hosting</h4>
+              <p>Fast, secure, and scalable cloud hosting for all your websites, microservices, and applications.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">✉️</div>
+              <h4>Professional Email</h4>
+              <p>Custom domain email addresses that build trust, enhance deliverability, and strengthen your brand.</p>
+            </div>
+          </div>
+
+          <!-- 24/7 Continuous Security Ribbon -->
+          <div class="security-monitor-bar">
+            <div class="sec-left">
+              <div class="sec-shield">🛡️</div>
+              <div class="sec-text">
+                <strong>Full 24/7 Security Monitoring</strong>
+                <span>Paddy Me., Domains, Hosting and Professional Email are protected by continuous PCI DSS Security monitoring.</span>
+              </div>
+            </div>
+            <div class="sec-pills">
+              <span class="sec-pill-tag">✓ Payments</span>
+              <span class="sec-pill-tag">✓ Domains</span>
+              <span class="sec-pill-tag">✓ Hosting</span>
+              <span class="sec-pill-tag">✓ Professional Email</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -981,7 +1613,7 @@ h1 span,.accent{color:#e9a300}
       </div>
     </section>
 
-    <!-- PRIVACY AND SERVICE STATUS (White Background) -->
+    <!-- PRIVACY AND SERVICE STATUS -->
     <section class="section section-white" id="legal-notice" aria-labelledby="notice-heading">
       <div class="wrap">
         <div class="section-head">
@@ -994,7 +1626,48 @@ h1 span,.accent{color:#e9a300}
     </section>
   </main>
 
-  <!-- ===== ENTERPRISE PADDY ME. FOOTER ===== -->
+  <!-- ===== 5-ITEM TRUST & SECURITY RIBBON (IMAGE 1 DESIGN) ===== -->
+  <div class="trust-ribbon">
+    <div class="wrap trust-ribbon-grid">
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-icon">🛡️</div>
+        <div>
+          <strong>Secure Payments</strong>
+          <span>PCI DSS Compliant</span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-icon">🔒</div>
+        <div>
+          <strong>SSL Encrypted</strong>
+          <span>Your data is safe</span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-icon">🎧</div>
+        <div>
+          <strong>24/7 Support</strong>
+          <span>We're always here</span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-icon">🌐</div>
+        <div>
+          <strong>Global Access</strong>
+          <span>Available worldwide</span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-icon">🤝</div>
+        <div>
+          <strong>Trusted Partner</strong>
+          <span>Working with leaders</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ENTERPRISE DUAL FOOTER (IMAGE 1 EXACT DESIGN) ===== -->
   <footer class="footer" id="about-paddy-me" aria-label="Footer">
     <div class="wrap">
       <div class="footer-top">
@@ -1003,273 +1676,601 @@ h1 span,.accent{color:#e9a300}
             <img src="assets/logo-white.svg" alt="Paddy Me." class="brand-logo-img" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
             <span class="brand-wordmark" aria-label="Paddy Me.">Paddy <b>Me.</b></span>
           </a>
-          <p style="margin-top:14px">Building a flexible platform for account access, business workspaces, membership workflows, cPanel cloud hosting, and future application experiences.</p>
-          <div class="footer-meta-block">
-            <strong>Sales and Support Hours</strong>
-            Monday&ndash;Friday: 8:00 a.m.&ndash;5:30 p.m.<br>
-            Sunday: 10:00 a.m.&ndash;5:30 p.m.<br>
-            Saturday: Closed
-          </div>
-          <div class="footer-meta-block">
-            <strong>Contact Support</strong>
-            <a href="mailto:support@paddyme.com" style="color:#ffca43;text-decoration:none">support@paddyme.com</a>
+          <p style="margin-top:14px">Secure Payments. Global Access. Powering your business with secure payments, reliable cloud hosting, and professional developer tools worldwide.</p>
+          <div class="social-icons-tray">
+            <a href="#social" class="social-icon-btn" aria-label="Facebook">f</a>
+            <a href="#social" class="social-icon-btn" aria-label="X">𝕏</a>
+            <a href="#social" class="social-icon-btn" aria-label="Instagram">ig</a>
+            <a href="#social" class="social-icon-btn" aria-label="LinkedIn">in</a>
+            <a href="#social" class="social-icon-btn" aria-label="YouTube">▶</a>
+            <a href="#social" class="social-icon-btn" aria-label="Telegram">✈</a>
           </div>
         </div>
 
         <div class="footer-columns">
-          <!-- SERVICES -->
+          <!-- Products -->
           <div class="footer-col">
-            <h3>Services</h3>
+            <h3>Products</h3>
             <div class="footer-links">
-              <a href="#hosting">Shared Hosting</a>
+              <a href="#hosting">Payments</a>
               <a href="#hosting">Domains</a>
-              <a href="#hosting">VPS Hosting</a>
-              <a href="#hosting">Become a Reseller</a>
-              <a href="#web2app">Web2App Packaging</a>
-              <a href="#membership">Access Management</a>
-              <a href="#hosting">Cloud DNS Management</a>
-              <a href="#hosting">SSL Certificates</a>
-              <a href="#hosting">Server Migrations</a>
+              <a href="#hosting">Hosting</a>
+              <a href="#hosting">Email</a>
+              <a href="#web2app">Payment Links</a>
+              <a href="#web2app">Invoices</a>
+              <a href="#membership">Subscriptions</a>
+              <a href="#hosting">Online Store</a>
             </div>
           </div>
 
-          <!-- CLIENT AREA -->
+          <!-- Solutions -->
           <div class="footer-col">
-            <h3>Client Area</h3>
+            <h3>Solutions</h3>
             <div class="footer-links">
-              <a href="#signin" class="auth-open-signin">Log In to the Members Area</a>
-              <a href="#signup" class="auth-open-signup">Create an Account</a>
-              <a href="#signin" class="auth-open-signin">Reset Password</a>
-              <a href="#hosting">Announcements</a>
-              <a href="#features">Getting Started</a>
-              <a href="#hosting">Frequently Asked Questions</a>
-              <a href="#hosting">Knowledge Base</a>
-              <a href="#legal-notice">System Status &amp; Incidents</a>
-              <a href="#features">Download Center</a>
+              <a href="#features">E-commerce</a>
+              <a href="#features">Freelancers</a>
+              <a href="#features">Agencies</a>
+              <a href="#features">SaaS &amp; Software</a>
+              <a href="#features">Schools &amp; Education</a>
+              <a href="#features">Nonprofits</a>
+              <a href="#features">Retailers</a>
+              <a href="#features">Enterprises</a>
             </div>
           </div>
 
-          <!-- SERVICE POLICIES -->
+          <!-- Resources -->
           <div class="footer-col">
-            <h3>Service Policies</h3>
+            <h3>Resources</h3>
             <div class="footer-links">
+              <a href="#features">Blog</a>
+              <a href="#features">Guides</a>
+              <a href="#features">Case Studies</a>
+              <a href="#features">Webinars</a>
+              <a href="#features">Video Tutorials</a>
+              <a href="#features">Documentation</a>
+              <a href="#legal-notice">Status Page</a>
+              <a href="#features">API Reference</a>
+            </div>
+          </div>
+
+          <!-- Support & Legal -->
+          <div class="footer-col">
+            <h3>Support &amp; Legal</h3>
+            <div class="footer-links">
+              <a href="#features">Help Center</a>
+              <a href="mailto:support@paddyme.com">Contact Us</a>
+              <a href="#features">Live Chat</a>
+              <a href="#features">Submit a Ticket</a>
               <a href="#legal-notice">Terms of Service</a>
               <a href="#legal-notice">Privacy Policy</a>
-              <a href="#legal-notice">Acceptable Use Policy</a>
-              <a href="#legal-notice">Unlimited Usage Policy</a>
-              <a href="#legal-notice">Backup Policy</a>
-              <a href="#legal-notice">Cookie Settings</a>
-              <a href="#legal-notice">Data Processing Agreement</a>
-              <a href="#legal-notice">Service Level Agreement (SLA)</a>
+              <a href="#legal-notice">Refund Policy</a>
+              <a href="#legal-notice">GDPR Compliance</a>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- RESOURCES AND LEGAL -->
-          <div class="footer-col">
-            <h3>Resources and Legal</h3>
-            <div class="footer-links">
-              <a href="#legal-notice">Abuse Report</a>
-              <a href="#legal-notice">Registrant Rights</a>
-              <a href="#legal-notice">Registrant Educational</a>
-              <a href="#legal-notice">Law Enforcement</a>
-              <a href="#legal-notice">Security Overview</a>
-              <a href="mailto:support@paddyme.com">Contact Legal Team</a>
-              <a href="#legal-notice">Vulnerability Disclosure</a>
-              <a href="#legal-notice">Network &amp; Uptime Reports</a>
-            </div>
+      <!-- Footer Mid-Row: Newsletter, App Downloads & Payment Rails -->
+      <div class="footer-mid-row">
+        <div>
+          <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#00f2fe;margin-bottom:4px">Stay Connected</div>
+          <div style="font-size:12px;color:#94a3b8">Get the latest platform updates, offers and tips.</div>
+          <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thank you for subscribing to Paddy Me. updates!');this.reset();">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <div>
+          <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#00f2fe;margin-bottom:4px">Accepted Payment Rails</div>
+          <div class="accepted-payments-strip">
+            <span class="pay-pill">VISA</span>
+            <span class="pay-pill">Mastercard</span>
+            <span class="pay-pill">PayPal</span>
+            <span class="pay-pill">Stripe</span>
+            <span class="pay-pill">MTN MoMo</span>
+            <span class="pay-pill">Telecel Cash</span>
+            <span class="pay-pill">AT Money</span>
+            <span class="pay-pill">Bank Transfer</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#00f2fe;margin-bottom:4px">Download Our App</div>
+          <div class="app-downloads">
+            <a href="#download" onclick="triggerInDevAdvisory()" class="app-badge-btn">Google Play</a>
+            <a href="#download" onclick="triggerInDevAdvisory()" class="app-badge-btn">App Store</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; <span id="year">2026</span> Paddy Me. All rights reserved.</span>
-        <span>Enterprise Infrastructure and SSD-Powered cPanel Hosting &middot; <a href="#legal-notice">Service Status</a></span>
+        <span>&copy; <span id="year">2026</span> Paddy Me. (PayPaddy). All rights reserved.</span>
+        <span>
+          <a href="#top">Home</a> &middot; 
+          <a href="#legal-notice">Privacy Policy</a> &middot; 
+          <a href="#legal-notice">Terms of Service</a> &middot; 
+          <a href="#legal-notice">Refund Policy</a> &middot; 
+          <a href="#legal-notice">Cookies</a> &middot; 
+          <a href="mailto:support@paddyme.com">Contact</a>
+        </span>
       </div>
     </div>
   </footer>
 </div>
 
-<!-- ===== AUTH MODALS (Firebase Production) ===== -->
-<div class="auth-overlay" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="signup-title">
-  <div class="auth-modal">
-    <button class="close-btn" onclick="closeAuthModals()" aria-label="Close modal">&times;</button>
-    <h2 id="signup-title">Create an Account</h2>
-    <p class="sub">Join the Paddy Me. early-access waitlist</p>
+<!-- ===== MODAL: WORLDWIDE REGISTRATION & LOGIN (IMAGE 2 DESIGN) ===== -->
+<div class="auth-overlay" id="auth-main-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+  <div class="auth-shell">
+    <button class="auth-close-x" onclick="closeAuthModal()" aria-label="Close modal">&times;</button>
+    <div class="auth-body-split">
+      
+      <!-- Left Column: Early Membership Perks -->
+      <div class="auth-side-perks">
+        <div>
+          <div class="brand">
+            <img src="assets/logo-white.svg" alt="Paddy Me." class="brand-logo-img" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+            <span class="brand-wordmark" style="color:#fff">Paddy <b>Me.</b></span>
+          </div>
+          <p style="font-size:12px;color:#00f2fe;font-weight:700;margin:6px 0 16px;letter-spacing:.05em">Simple. Secure. Global.</p>
+          
+          <h2>Join the <span>Paddy Me.</span> Early Membership!</h2>
+          <p class="desc">Be part of something bigger. Our platform is currently in production and will soon be live for full use worldwide.</p>
 
-    <div class="social-buttons">
-      <button type="button" class="btn-social" id="google-signup-btn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.3-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"/></svg>
-        Continue with Google
-      </button>
-      <button type="button" class="btn-social" id="github-signup-btn">
-        <svg viewBox="0 0 24 24" fill="#181717" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        Continue with GitHub
-      </button>
+          <div class="perk-wip-card">
+            <div class="icon-box">&#9881;</div>
+            <div>
+              <strong>Production in Progress</strong>
+              <span>We're working hard to bring you the best experience. Stay tuned!</span>
+            </div>
+          </div>
+
+          <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 12px">&#128081; Be an Early Member &amp; Enjoy <span style="color:#00e5a3">Exclusive Offers</span></p>
+
+          <div class="perks-list">
+            <div class="perk-row">
+              <div class="perk-icon-wrap">&#127991;</div>
+              <div>
+                <h4>Lowest Membership Rates</h4>
+                <p>Get the best rates before everyone else.</p>
+              </div>
+            </div>
+            <div class="perk-row">
+              <div class="perk-icon-wrap">&#128640;</div>
+              <div>
+                <h4>Exclusive Early Access</h4>
+                <p>Be first to experience all features.</p>
+              </div>
+            </div>
+            <div class="perk-row">
+              <div class="perk-icon-wrap">&#128737;</div>
+              <div>
+                <h4>Priority Support</h4>
+                <p>Get faster assistance and guidance.</p>
+              </div>
+            </div>
+            <div class="perk-row">
+              <div class="perk-icon-wrap">&#127873;</div>
+              <div>
+                <h4>Special Rewards</h4>
+                <p>Enjoy exclusive bonuses and promotions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="perk-footer-quote">
+          Your future in one platform!
+        </div>
+      </div>
+
+      <!-- Right Column: Form Tabs with Worldwide Country Selector -->
+      <div class="auth-form-side">
+        <div class="auth-tabs-toggle">
+          <button type="button" class="auth-tab-btn" id="tab-btn-login" onclick="setAuthTab('login')">Login</button>
+          <button type="button" class="auth-tab-btn active" id="tab-btn-register" onclick="setAuthTab('register')">Register</button>
+        </div>
+
+        <div class="brand" style="margin-bottom:14px">
+          <img src="assets/logo.svg" alt="Paddy Me." class="brand-logo-img" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+          <span class="brand-wordmark" style="color:#fff;font-size:22px">Paddy <b>Me.</b></span>
+        </div>
+
+        <h3 id="auth-modal-title">Create Your Account</h3>
+        <p class="subtext" id="auth-modal-sub">Join the early membership and be the first to access exclusive offers and lowest fees.</p>
+
+        <div class="auth-error" id="auth-err-box" role="alert" aria-live="polite"></div>
+        <div class="auth-success" id="auth-ok-box" role="status" aria-live="polite"></div>
+
+        <form id="auth-main-form">
+          <!-- Register Names -->
+          <div class="form-names-grid" id="row-names">
+            <div class="field-group">
+              <span class="field-icon">&#128100;</span>
+              <input type="text" id="auth-fn" placeholder="First name" autocomplete="given-name">
+            </div>
+            <div class="field-group">
+              <span class="field-icon">&#128100;</span>
+              <input type="text" id="auth-ln" placeholder="Last name" autocomplete="family-name">
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="field-group">
+            <span class="field-icon">&#9993;</span>
+            <input type="email" id="auth-email" placeholder="Email address" autocomplete="email" required maxlength="254">
+          </div>
+
+          <!-- Worldwide Country & Phone Selector -->
+          <div class="field-group" id="row-phone">
+            <div class="phone-box-worldwide">
+              <select class="country-select" id="auth-country-select" aria-label="Select Country">
+                <option value="+1">🇺🇸 US (+1)</option>
+                <option value="+44">🇬🇧 UK (+44)</option>
+                <option value="+1">🇨🇦 Canada (+1)</option>
+                <option value="+233" selected>🇬🇭 Ghana (+233)</option>
+                <option value="+234">🇳🇬 Nigeria (+234)</option>
+                <option value="+254">🇰🇪 Kenya (+254)</option>
+                <option value="+27">🇿🇦 South Africa (+27)</option>
+                <option value="+49">🇩🇪 Germany (+49)</option>
+                <option value="+33">🇫🇷 France (+33)</option>
+                <option value="+91">🇮🇳 India (+91)</option>
+                <option value="+61">🇦🇺 Australia (+61)</option>
+                <option value="+971">🇦🇪 UAE (+971)</option>
+                <option value="+81">🇯🇵 Japan (+81)</option>
+                <option value="+86">🇨🇳 China (+86)</option>
+                <option value="+55">🇧🇷 Brazil (+55)</option>
+                <option value="+34">🇪🇸 Spain (+34)</option>
+                <option value="+39">🇮🇹 Italy (+39)</option>
+                <option value="+31">🇳🇱 Netherlands (+31)</option>
+                <option value="+65">🇸🇬 Singapore (+65)</option>
+                <option value="+other">🌍 Global (+Other)</option>
+              </select>
+              <input type="tel" id="auth-phone" placeholder="Phone number" autocomplete="tel">
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="field-group">
+            <span class="field-icon">&#128274;</span>
+            <input type="password" id="auth-pass" placeholder="Password" autocomplete="current-password" required minlength="6">
+            <button type="button" class="eye-toggle" onclick="togglePassVisibility('auth-pass', this)" aria-label="Show password">&#128065;</button>
+          </div>
+
+          <!-- Confirm Password (Register Only) -->
+          <div class="field-group" id="row-confirm-pass">
+            <span class="field-icon">&#128274;</span>
+            <input type="password" id="auth-pass-confirm" placeholder="Confirm password" autocomplete="new-password" minlength="6">
+            <button type="button" class="eye-toggle" onclick="togglePassVisibility('auth-pass-confirm', this)" aria-label="Show password">&#128065;</button>
+          </div>
+
+          <label class="terms-label" id="row-terms">
+            <input type="checkbox" id="auth-terms" checked>
+            <span>I agree to the <a href="#legal-notice">Terms of Service</a> and <a href="#legal-notice">Privacy Policy</a></span>
+          </label>
+
+          <button type="submit" class="btn-auth-action" id="auth-submit-btn">Register Now</button>
+        </form>
+
+        <div class="auth-split-line"><span>OR</span></div>
+
+        <button type="button" class="btn-google-oauth" id="google-direct-btn">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px" aria-hidden="true"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.3-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"/></svg>
+          Continue with Google
+        </button>
+
+        <div class="auth-switch-foot">
+          <span id="auth-switch-prompt">Already have an account?</span> 
+          <a id="auth-switch-link" onclick="toggleAuthMode()">Login</a>
+        </div>
+      </div>
     </div>
 
-    <div class="auth-divider"><span>or register with email</span></div>
-
-    <div class="auth-error" id="signup-error" role="alert" aria-live="polite"></div>
-    <div class="auth-success" id="signup-success" role="status" aria-live="polite"></div>
-
-    <form id="signup-form">
-      <label for="signup-name">Full name</label>
-      <input type="text" id="signup-name" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="100" required>
-
-      <label for="signup-email">Email</label>
-      <input type="email" id="signup-email" placeholder="you@example.com" autocomplete="email" maxlength="254" required>
-
-      <label for="signup-password">Password</label>
-      <input type="password" id="signup-password" placeholder="At least 6 characters" autocomplete="new-password" minlength="6" required>
-
-      <button type="submit" class="btn btn-gold btn-submit" id="signup-btn-submit">Create an Account</button>
-    </form>
-    <p class="switch">Already have an account? <a onclick="switchToSignIn()">Sign In</a></p>
+    <!-- Bottom Notice Bar (Image 2) -->
+    <div class="auth-bottom-banner">
+      <div class="msg">
+        <span style="font-size:18px">&#128227;</span>
+        <span><strong>Don't miss out!</strong> Register or join the early membership waitlist and wait for the lowest membership rates or fees.</span>
+      </div>
+      <button type="button" class="btn-banner-wait" onclick="triggerInDevAdvisory()">Join Waitlist</button>
+    </div>
   </div>
 </div>
 
-<div class="auth-overlay" id="signin-modal" role="dialog" aria-modal="true" aria-labelledby="signin-title">
-  <div class="auth-modal">
-    <button class="close-btn" onclick="closeAuthModals()" aria-label="Close modal">&times;</button>
-    <h2 id="signin-title">Sign In</h2>
-    <p class="sub">Welcome back to Paddy Me.</p>
-
-    <div class="social-buttons">
-      <button type="button" class="btn-social" id="google-signin-btn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.3-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"/></svg>
-        Sign In with Google
-      </button>
-      <button type="button" class="btn-social" id="github-signin-btn">
-        <svg viewBox="0 0 24 24" fill="#181717" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        Sign In with GitHub
-      </button>
-    </div>
-
-    <div class="auth-divider"><span>or sign in with email</span></div>
-
-    <div class="auth-error" id="signin-error" role="alert" aria-live="polite"></div>
-    <div class="auth-success" id="signin-success" role="status" aria-live="polite"></div>
-
-    <form id="signin-form">
-      <label for="signin-email">Email</label>
-      <input type="email" id="signin-email" placeholder="you@example.com" autocomplete="username" maxlength="254" required>
-
-      <label for="signin-password">Password</label>
-      <input type="password" id="signin-password" placeholder="Your password" autocomplete="current-password" required>
-
-      <button type="submit" class="btn btn-gold btn-submit" id="signin-btn-submit">Sign In</button>
-    </form>
-    <p class="switch"><a href="#reset-password" id="forgot-password-link">Reset Password</a></p>
-    <p class="switch">New to Paddy Me.? <a onclick="switchToSignUp()">Create an Account</a></p>
-  </div>
-</div>
-
-<!-- ===== FULL OPERATIONAL DASHBOARD (Usage Centric) ===== -->
+<!-- ===== ADVANCED LIGHT DASHBOARD (IMAGE 1 EXACT DESIGN) ===== -->
 <div id="dashboard-view">
-  <div class="dash-layout">
-    <aside class="dash-sidebar" aria-label="Dashboard Sidebar">
-      <div class="dash-logo"><span>P</span> Paddy Me.</div>
-      <nav class="dash-nav" aria-label="Dashboard Navigation">
-        <a href="#dashboard" class="active">🏠 Dashboard</a>
-        <a href="#operations">⚡ Operations</a>
-        <a href="#workflows">🔄 Workflows</a>
-        <a href="#reports">📄 System Reports</a>
-        <a href="#access-links">🔗 Access Links</a>
-        <a href="#customers">👥 Customers &amp; Teams</a>
-        <a href="#subscriptions">🛡 Subscriptions &amp; Tiers</a>
-        <a href="#transfers">📦 Data Transfers</a>
-        <a href="#domains">🌐 Domains</a>
-        <a href="#hosting-dash">🖥 Hosting</a>
-        <a href="#email-dash">✉ Email</a>
-        <div class="section-label">Configure</div>
-        <a href="#auth">👤 User &amp; Authentication</a>
-        <a href="#orgs">🏢 Organizations Settings</a>
-        <a href="#sessions">🔑 Session Management</a>
-        <a href="#integrations">🔌 Integrations</a>
-        <div class="section-label">Developers</div>
-        <a href="#apikeys">⭐ API Keys</a>
-        <a href="#webhooks">📡 Webhooks</a>
-      </nav>
+  <div class="d-shell">
+    <!-- Left Navigation Bar -->
+    <aside class="d-sidebar" aria-label="Dashboard Sidebar">
+      <div>
+        <div class="d-brand">
+          <div class="d-brand-icon">&#9650;</div>
+          <span>Paddy Me.</span>
+        </div>
+
+        <nav class="d-nav" aria-label="Dashboard Main Navigation">
+          <a href="#dash-home" class="active">&#127968; Dashboard</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128179; Transactions</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128176; Payments</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128196; Invoices</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128279; Payment Links</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128101; Customers</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128260; Subscriptions</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#127974; Payouts &amp; Withdrawals</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#127760; Domains</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128187; Hosting</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#9993; Email</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128722; Online Store <span class="nav-badge">New</span></a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128202; Reports</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#9881; Settings</a>
+
+          <div class="d-nav-sep">Configure</div>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128100; User &amp; Authentication</a>
+          <div class="d-subnav">
+            <a href="#action" onclick="triggerInDevAdvisory()">Email</a>
+            <a href="#action" onclick="triggerInDevAdvisory()">Phone</a>
+            <a href="#action" onclick="triggerInDevAdvisory()">Username</a>
+            <a href="#action" onclick="triggerInDevAdvisory()">Social Connections</a>
+            <a href="#action" onclick="triggerInDevAdvisory()">Web3 <span class="nav-badge beta">Beta</span></a>
+            <a href="#action" onclick="triggerInDevAdvisory()">Enterprise Connections</a>
+            <a href="#action" onclick="triggerInDevAdvisory()">Multi-factor</a>
+            <a href="#action" onclick="triggerInDevAdvisory()">Restrictions</a>
+          </div>
+
+          <a href="#action" onclick="triggerInDevAdvisory()">&#127970; Organizations Settings</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128477; Session Management</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128100; Account Portal <span class="nav-badge">New</span></a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128268; Integrations</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#9881; JIT Templates</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128225; Webhooks</a>
+
+          <div class="d-nav-sep">Developers</div>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#11088; API Keys</a>
+          <a href="#action" onclick="triggerInDevAdvisory()">&#128739; Paths</a>
+        </nav>
+      </div>
+
+      <div class="d-help-box">
+        <strong>Need Help?</strong>
+        <p>Our support team is available 24/7 to help you.</p>
+        <button type="button" onclick="triggerInDevAdvisory()">Contact Support</button>
+      </div>
     </aside>
 
-    <main class="dash-main">
-      <div class="dash-header">
-        <div>
-          <h1>Good morning, <span id="dash-username">Member</span> 👋</h1>
-          <p>Here's a quick overview of your early-access account and deployments.</p>
+    <!-- Main Content Area -->
+    <main class="d-main">
+      <!-- Top Search & User Corner -->
+      <div class="d-topbar">
+        <div class="d-search">
+          <span class="d-search-icon">&#128269;</span>
+          <input type="text" placeholder="Search transactions, customers, invoices..." onkeydown="if(event.key==='Enter')triggerInDevAdvisory()">
         </div>
-        <div class="dash-user">
-          <img id="dash-avatar-img" class="dash-avatar" src="" alt="User avatar" style="display:none">
-          <div id="dash-avatar-fallback" class="dash-avatar">P</div>
-          <div class="dash-user-meta">
-            <span class="user-name" id="dash-name-display">Member</span>
-            <span class="user-email" id="dash-email"></span>
+        <div class="d-user-corner">
+          <button class="d-notif-btn" onclick="triggerInDevAdvisory()" aria-label="Notifications">
+            &#128276;
+            <span class="d-notif-badge"></span>
+          </button>
+          <div class="d-profile-pill">
+            <div>
+              <div class="name" id="dash-user-display">Team Trade</div>
+              <div class="role" id="dash-user-role">Merchant</div>
+            </div>
+            <div class="d-avatar-initials" id="dash-avatar-circle">T</div>
           </div>
-          <button class="btn-signout" onclick="signOutUser()">Sign Out</button>
+          <button class="btn btn-light" style="padding:6px 12px;font-size:12px" onclick="signOutUser()">Sign Out</button>
         </div>
       </div>
 
-      <div class="coming-soon-banner">
-        <span style="font-size:22px" aria-hidden="true">🚧</span>
+      <!-- Welcome Message -->
+      <div class="d-greeting">
+        <h1>Good morning, <span id="dash-username">Team Trade</span> &#128075;</h1>
+        <p>Here's a quick overview of your business performance.</p>
+      </div>
+
+      <!-- 4 Top Metrics (Sparkline Cards from Image 1) -->
+      <div class="d-stats-4">
+        <div class="d-stat-box">
+          <div class="d-stat-head">
+            <div class="d-stat-icon green">&#36;</div>
+            <span>Total Sales</span>
+          </div>
+          <div class="d-stat-value">GHS 0.00</div>
+          <svg class="d-stat-spark" viewBox="0 0 100 25" preserveAspectRatio="none">
+            <path d="M0,20 Q20,15 40,18 T70,8 T100,5" fill="none" stroke="#10b981" stroke-width="2.5"/>
+          </svg>
+        </div>
+
+        <div class="d-stat-box">
+          <div class="d-stat-head">
+            <div class="d-stat-icon blue">&#10003;</div>
+            <span>Successful Payments</span>
+          </div>
+          <div class="d-stat-value">0</div>
+          <svg class="d-stat-spark" viewBox="0 0 100 25" preserveAspectRatio="none">
+            <path d="M0,18 Q30,22 55,10 T80,14 T100,6" fill="none" stroke="#0284c7" stroke-width="2.5"/>
+          </svg>
+        </div>
+
+        <div class="d-stat-box">
+          <div class="d-stat-head">
+            <div class="d-stat-icon gold">&#9203;</div>
+            <span>Pending Payments</span>
+          </div>
+          <div class="d-stat-value">0</div>
+          <svg class="d-stat-spark" viewBox="0 0 100 25" preserveAspectRatio="none">
+            <path d="M0,15 Q30,10 60,18 T100,12" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+          </svg>
+        </div>
+
+        <div class="d-stat-box">
+          <div class="d-stat-head">
+            <div class="d-stat-icon red">&#8635;</div>
+            <span>Refunds</span>
+          </div>
+          <div class="d-stat-value">0</div>
+          <svg class="d-stat-spark" viewBox="0 0 100 25" preserveAspectRatio="none">
+            <path d="M0,18 Q35,16 65,12 T100,16" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Middle Grid: Charts & Quick Actions -->
+      <div class="d-middle-grid">
+        <div class="d-card">
+          <div class="d-card-head">
+            <h3>Sales Overview</h3>
+            <div class="d-legend">
+              <span class="d-legend-item"><span class="d-legend-dot" style="background:#10b981"></span> Successful</span>
+              <span class="d-legend-item"><span class="d-legend-dot" style="background:#f59e0b"></span> Pending</span>
+              <span class="d-legend-item"><span class="d-legend-dot" style="background:#ef4444"></span> Failed</span>
+            </div>
+          </div>
+
+          <div class="d-charts-split">
+            <div class="d-bar-chart-mock">
+              <div class="d-bar-group"><div class="d-bar" style="height:35px;background:#10b981"></div><div class="d-bar" style="height:10px;background:#f59e0b"></div><div class="d-bar" style="height:5px;background:#ef4444"></div></div>
+              <div class="d-bar-group"><div class="d-bar" style="height:60px;background:#10b981"></div><div class="d-bar" style="height:15px;background:#f59e0b"></div></div>
+              <div class="d-bar-group"><div class="d-bar" style="height:90px;background:#10b981"></div><div class="d-bar" style="height:12px;background:#f59e0b"></div></div>
+              <div class="d-bar-group"><div class="d-bar" style="height:50px;background:#10b981"></div><div class="d-bar" style="height:8px;background:#f59e0b"></div></div>
+              <div class="d-bar-group"><div class="d-bar" style="height:115px;background:#10b981"></div><div class="d-bar" style="height:14px;background:#f59e0b"></div></div>
+              <div class="d-bar-group"><div class="d-bar" style="height:130px;background:#10b981"></div><div class="d-bar" style="height:18px;background:#f59e0b"></div><div class="d-bar" style="height:6px;background:#ef4444"></div></div>
+              <div class="d-bar-group"><div class="d-bar" style="height:80px;background:#10b981"></div><div class="d-bar" style="height:10px;background:#f59e0b"></div><div class="d-bar" style="height:8px;background:#ef4444"></div></div>
+            </div>
+
+            <div>
+              <div style="font-size:13px;font-weight:750;color:#0f172a;margin-bottom:8px">Payment Methods</div>
+              <div class="d-donut-mock">
+                <div class="donut-circle"><div class="donut-inner"></div></div>
+                <div style="font-size:11.5px;color:#64748b;display:grid;gap:4px">
+                  <span class="d-legend-item"><span class="d-legend-dot" style="background:#10b981"></span> Card</span>
+                  <span class="d-legend-item"><span class="d-legend-dot" style="background:#0284c7"></span> Mobile Money</span>
+                  <span class="d-legend-item"><span class="d-legend-dot" style="background:#a855f7"></span> Bank Transfer</span>
+                  <span class="d-legend-item"><span class="d-legend-dot" style="background:#f59e0b"></span> USSD</span>
+                  <span class="d-legend-item"><span class="d-legend-dot" style="background:#94a3b8"></span> Others</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Quick Actions & Balance -->
         <div>
-          <strong>Services are active in early access.</strong><br>
-          <span style="font-size:13px;color:#0369a1">You have successfully authenticated with Paddy Me. Firebase production services. Web2App packaging, visual code synthesis, VPN tunnels, hosting clusters, and workflow pipelines are initializing for your workspace.</span>
+          <div class="d-card">
+            <div class="d-card-head">
+              <h3>Quick Actions</h3>
+              <a href="#action" onclick="triggerInDevAdvisory()" style="font-size:12px;color:#0284c7;text-decoration:none;font-weight:700">View All &rarr;</a>
+            </div>
+            <div class="d-actions-grid">
+              <div class="d-action-tile" onclick="triggerInDevAdvisory()">
+                <div class="d-action-icon" style="background:#e0f2fe;color:#0284c7">&#128279;</div>
+                <span>Create Payment Link</span>
+              </div>
+              <div class="d-action-tile" onclick="triggerInDevAdvisory()">
+                <div class="d-action-icon" style="background:#e0f2fe;color:#0284c7">&#128196;</div>
+                <span>Create Invoice</span>
+              </div>
+              <div class="d-action-tile" onclick="triggerInDevAdvisory()">
+                <div class="d-action-icon" style="background:#fae8ff;color:#c026d3">&#8599;</div>
+                <span>Request Payout</span>
+              </div>
+              <div class="d-action-tile" onclick="triggerInDevAdvisory()">
+                <div class="d-action-icon" style="background:#e0f2fe;color:#0284c7">&#127760;</div>
+                <span>Register Domain</span>
+              </div>
+              <div class="d-action-tile" onclick="triggerInDevAdvisory()">
+                <div class="d-action-icon" style="background:#e0f2fe;color:#0284c7">&#128187;</div>
+                <span>Buy Hosting</span>
+              </div>
+              <div class="d-action-tile" onclick="triggerInDevAdvisory()">
+                <div class="d-action-icon" style="background:#fae8ff;color:#c026d3">&#9993;</div>
+                <span>Create Email Account</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-balance-box">
+            <div>
+              <span style="font-size:12px;color:#94a3b8">&#128091; Available Balance</span>
+              <div class="d-balance-val">GHS 0.00</div>
+            </div>
+            <button type="button" class="btn-withdraw" onclick="triggerInDevAdvisory()">Withdraw</button>
+          </div>
         </div>
       </div>
 
-      <!-- 4 Operational Stat Cards -->
-      <div class="stat-grid">
-        <div class="stat-card">
-          <div class="label">Total Deployments</div>
-          <div class="value">0</div>
-          <div class="note">Ready for build tasks</div>
+      <!-- Lower Grid: Recent Transactions & Activity -->
+      <div class="d-lower-grid">
+        <div class="d-card">
+          <div class="d-card-head">
+            <h3>Recent Transactions</h3>
+          </div>
+          <div class="d-empty-state">
+            <div class="d-empty-icon">&#128196;</div>
+            <h4>No transactions yet</h4>
+            <p>Your transactions will appear here when you start accepting payments.</p>
+            <button type="button" onclick="triggerInDevAdvisory()">Set Up Payments</button>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="label">Verified Workflows</div>
-          <div class="value">0</div>
-          <div class="note">Pipeline ready</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Queued Tasks</div>
-          <div class="value">0</div>
-          <div class="note">Standby</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">System Availability</div>
-          <div class="value">99.9%</div>
-          <div class="note">Infrastructure online</div>
+
+        <div class="d-card">
+          <div class="d-card-head">
+            <h3>Recent Activity</h3>
+            <a href="#action" onclick="triggerInDevAdvisory()" style="font-size:12px;color:#0284c7;text-decoration:none;font-weight:700">View All</a>
+          </div>
+          <div class="d-empty-state" style="padding:28px 10px">
+            <div class="d-empty-icon" style="background:#f1f5f9;color:#94a3b8">&#128203;</div>
+            <h4>No recent activity yet</h4>
+            <p style="font-size:12px">Your recent transactions will appear here once you make a payment.</p>
+          </div>
         </div>
       </div>
 
-      <!-- User Verification Panel -->
-      <div class="panel">
-        <h3>Member Identity &amp; Security <span class="soon-badge" style="background:#ecfdf5;color:#047857">Verified</span></h3>
-        <div class="info-row"><div class="info-label">Account UID</div><div class="info-value" id="dash-uid">&mdash;</div></div>
-        <div class="info-row"><div class="info-label">Primary Email</div><div class="info-value" id="dash-email-row">&mdash;</div></div>
-        <div class="info-row"><div class="info-label">Auth Provider</div><div class="info-value" id="dash-provider">&mdash;</div></div>
-        <div class="info-row"><div class="info-label">Email Verified</div><div class="info-value" id="dash-verified">&mdash;</div></div>
-      </div>
-
-      <!-- Operational Activity Panels -->
-      <div class="panel">
-        <h3>Recent Activity Logs <span class="soon-badge">Live Listeners</span></h3>
-        <p>Your workflow logs and deployment events will appear here once cloud builds are executed. No activity yet.</p>
-      </div>
-
-      <div class="panel">
-        <h3>Quick Actions <span class="soon-badge">Coming Soon</span></h3>
-        <p>Create access links, generate reports, provision server hosting, and manage custom domains directly from this console.</p>
-      </div>
-
-      <div class="panel">
-        <h3>Account Status</h3>
-        <p>You are successfully registered on the Paddy Me. early-access developer platform. We will notify you as new features and clusters become available.</p>
+      <!-- Bottom 6 Cards -->
+      <div class="d-bottom-row">
+        <div class="d-bottom-tile">
+          <strong><span style="color:#10b981">&#128737;</span> Your Business Is Secure</strong>
+          <p>We use industry best practices to keep your account and transactions safe.</p>
+          <a href="#action" onclick="triggerInDevAdvisory()">Learn More &rarr;</a>
+        </div>
+        <div class="d-bottom-tile">
+          <strong><span style="color:#0284c7">&#9881;</span> Insights</strong>
+          <p>Your sales are up by 18% compared to the previous 7 days.</p>
+        </div>
+        <div class="d-bottom-tile">
+          <strong><span style="color:#0284c7">&#127760;</span> Domains</strong>
+          <p>Manage your domains and DNS settings.</p>
+        </div>
+        <div class="d-bottom-tile">
+          <strong><span style="color:#0284c7">&#128187;</span> Hosting</strong>
+          <p>Manage your hosting plans and resources.</p>
+        </div>
+        <div class="d-bottom-tile">
+          <strong><span style="color:#0284c7">&#9993;</span> Email</strong>
+          <p>Access your business email accounts.</p>
+        </div>
+        <div class="d-bottom-tile">
+          <strong><span style="color:#0284c7">&#128260;</span> Subscriptions</strong>
+          <p>View and manage your recurring payments.</p>
+        </div>
       </div>
     </main>
   </div>
 </div>
 
-<!-- ===== OFFICIAL PADDY ME. FIREBASE INTEGRATION (v13.0.0) ===== -->
+<!-- ===== IN-DEVELOPMENT ADVISORY MODAL ===== -->
+<div class="dev-modal-overlay" id="dev-advisory-modal" role="dialog" aria-modal="true">
+  <div class="dev-modal">
+    <div class="dev-modal-icon">&#128640;</div>
+    <h3>Feature in Development</h3>
+    <p>In development &mdash; Get in touch always to grab the early rates before full service is launched.</p>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:10px;border-radius:10px;font-size:12.5px;color:#334155;margin-bottom:18px">
+      <strong>Direct Contact:</strong> <a href="mailto:support@paddyme.com" style="color:#0284c7">support@paddyme.com</a>
+    </div>
+    <button type="button" class="btn-close-dev" onclick="closeInDevAdvisory()">Understood</button>
+  </div>
+</div>
+
+<!-- ===== OFFICIAL FIREBASE V13 REAL PRODUCTION SCRIPT ===== -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
   import {
@@ -1280,21 +2281,18 @@ h1 span,.accent{color:#e9a300}
     signInWithRedirect,
     getRedirectResult,
     GoogleAuthProvider,
-    GithubAuthProvider,
     onAuthStateChanged,
     signOut,
     updateProfile,
     setPersistence,
-    browserLocalPersistence,
-    sendEmailVerification,
-    sendPasswordResetEmail
+    browserLocalPersistence
   } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
   import {
     getAnalytics,
     isSupported
   } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-analytics.js";
 
-  // Official Paddy Me. Firebase Production Configuration
+  // Official Paddy Me. Production Credentials
   const firebaseConfig = {
     apiKey: "AIzaSyCNAeQ8S5PWsmIDsnqyjglXEdW7I4iHeyg",
     authDomain: "paddy-me.firebaseapp.com",
@@ -1310,39 +2308,30 @@ h1 span,.accent{color:#e9a300}
     app = initializeApp(firebaseConfig);
     auth = getAuth(app);
     setPersistence(auth, browserLocalPersistence);
-
-    // Initialize Analytics if supported in user environment
     isSupported().then((supported) => {
       if (supported) analytics = getAnalytics(app);
     }).catch(() => {});
   } catch (err) {
     console.error("[Paddy Me. Firebase init error]", err);
-    const box = document.getElementById('setup-message');
-    if (box) {
-      box.textContent = `Firebase init notice: ${err?.message || 'Check connection'}`;
-      box.classList.add('show');
-    }
   }
 
-  // OAuth Providers
   const googleProvider = new GoogleAuthProvider();
   googleProvider.setCustomParameters({ prompt: 'select_account' });
-  const githubProvider = new GithubAuthProvider();
 
-  // Helper DOM Selectors
+  // DOM Helpers
   const byId = (id) => document.getElementById(id);
-  const showMessage = (box, msg) => { if (box) { box.textContent = msg; box.classList.add('show'); } };
-  const hideMessage = (box) => { if (box) { box.textContent = ''; box.classList.remove('show'); } };
+  const showErr = (msg) => { const b = byId('auth-err-box'); b.textContent = msg; b.classList.add('show'); };
+  const showOk = (msg) => { const b = byId('auth-ok-box'); b.textContent = msg; b.classList.add('show'); };
+  const clearAlerts = () => { byId('auth-err-box').classList.remove('show'); byId('auth-ok-box').classList.remove('show'); };
 
-  // Error Sanitizer (Guards against leaking internal stack traces)
+  // Error Sanitizer
   function friendlyAuthError(error) {
-    console.error("Auth Exception:", error);
     const code = error?.code || '';
     switch (code) {
       case 'auth/popup-closed-by-user':
         return 'The sign-in popup was closed before completion. Please try again.';
       case 'auth/popup-blocked':
-        return 'Popup blocked by browser. Please allow popups or use redirect for paddy-me.firebaseapp.com.';
+        return 'Popup blocked by browser. Please allow popups for paddy-me.firebaseapp.com.';
       case 'auth/email-already-in-use':
         return 'An account already exists with this email address. Please sign in instead.';
       case 'auth/invalid-email':
@@ -1355,211 +2344,171 @@ h1 span,.accent{color:#e9a300}
         return 'Password must be at least 6 characters.';
       case 'auth/network-request-failed':
         return 'Network connection issue. Please verify your internet connection.';
-      case 'auth/too-many-requests':
-        return 'Too many attempts. Access temporarily restricted. Please try again later.';
-      case 'auth/unauthorized-domain':
-        return 'Domain not authorized. Please add your domain to Firebase Console > Authentication > Settings > Authorized Domains.';
       default:
         return error?.message || 'Authentication encountered an error. Please try again.';
     }
   }
 
-  // Anti-Spam Button Debounce Protection
-  let isSubmitting = false;
-  function setBusy(button, isBusy, busyText) {
-    if (!button) return;
-    isSubmitting = isBusy;
-    if (isBusy) {
-      button.dataset.prev = button.textContent;
-      button.textContent = busyText || 'Processing…';
-      button.disabled = true;
+  // Live Auth Tab Modes (Register vs Login)
+  let currentAuthMode = 'register';
+  window.setAuthTab = function(mode) {
+    currentAuthMode = mode;
+    clearAlerts();
+    const btnReg = byId('tab-btn-register');
+    const btnLog = byId('tab-btn-login');
+    const rowNames = byId('row-names');
+    const rowPhone = byId('row-phone');
+    const rowConfirm = byId('row-confirm-pass');
+    const rowTerms = byId('row-terms');
+    const title = byId('auth-modal-title');
+    const sub = byId('auth-modal-sub');
+    const submitBtn = byId('auth-submit-btn');
+    const promptText = byId('auth-switch-prompt');
+    const switchLink = byId('auth-switch-link');
+
+    if (mode === 'register') {
+      btnReg.classList.add('active');
+      btnLog.classList.remove('active');
+      rowNames.style.display = 'grid';
+      rowPhone.style.display = 'block';
+      rowConfirm.style.display = 'block';
+      rowTerms.style.display = 'flex';
+      title.textContent = 'Create Your Account';
+      sub.textContent = 'Join the early membership and be the first to access exclusive offers and lowest fees.';
+      submitBtn.textContent = 'Register Now';
+      promptText.textContent = 'Already have an account?';
+      switchLink.textContent = 'Login';
     } else {
-      button.textContent = button.dataset.prev || button.textContent;
-      button.disabled = false;
+      btnLog.classList.add('active');
+      btnReg.classList.remove('active');
+      rowNames.style.display = 'none';
+      rowPhone.style.display = 'none';
+      rowConfirm.style.display = 'none';
+      rowTerms.style.display = 'none';
+      title.textContent = 'Welcome Back';
+      sub.textContent = 'Sign in to access your business performance and developer workspace.';
+      submitBtn.textContent = 'Sign In';
+      promptText.textContent = "Don't have an account?";
+      switchLink.textContent = 'Register';
     }
-  }
-
-  // Modal Controls
-  window.closeAuthModals = function() {
-    byId('signup-modal').classList.remove('show');
-    byId('signin-modal').classList.remove('show');
-  };
-  window.switchToSignIn = function() {
-    hideMessage(byId('signup-error'));
-    hideMessage(byId('signup-success'));
-    byId('signup-modal').classList.remove('show');
-    byId('signin-modal').classList.add('show');
-  };
-  window.switchToSignUp = function() {
-    hideMessage(byId('signin-error'));
-    hideMessage(byId('signin-success'));
-    byId('signin-modal').classList.remove('show');
-    byId('signup-modal').classList.add('show');
   };
 
-  // Sign Out User
+  window.toggleAuthMode = function() {
+    window.setAuthTab(currentAuthMode === 'register' ? 'login' : 'register');
+  };
+
+  window.openAuthModal = function(initialMode = 'register') {
+    window.setAuthTab(initialMode);
+    byId('auth-main-modal').classList.add('show');
+  };
+
+  window.closeAuthModal = function() {
+    byId('auth-main-modal').classList.remove('show');
+  };
+
+  window.togglePassVisibility = function(inputId, btn) {
+    const input = byId(inputId);
+    if (!input) return;
+    if (input.type === 'password') {
+      input.type = 'text';
+      btn.style.color = '#00f2fe';
+    } else {
+      input.type = 'password';
+      btn.style.color = '#5a7b9d';
+    }
+  };
+
+  // In-Development Advisory Handlers
+  window.triggerInDevAdvisory = function() {
+    byId('dev-advisory-modal').classList.add('show');
+  };
+  window.closeInDevAdvisory = function() {
+    byId('dev-advisory-modal').classList.remove('show');
+  };
+
+  // Sign Out
   window.signOutUser = async function() {
     try {
       await signOut(auth);
     } catch (err) {
-      console.error("Sign out error:", err);
+      console.error(err);
     }
   };
 
-  // Modal Triggers
-  document.querySelectorAll('.auth-open-signup').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      hideMessage(byId('signup-error'));
-      hideMessage(byId('signup-success'));
-      byId('signup-modal').classList.add('show');
-    });
+  // Wire Modal Openers
+  document.querySelectorAll('.auth-open-signup').forEach(b => {
+    b.addEventListener('click', (e) => { e.preventDefault(); window.openAuthModal('register'); });
   });
-  document.querySelectorAll('.auth-open-signin').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      hideMessage(byId('signin-error'));
-      hideMessage(byId('signin-success'));
-      byId('signin-modal').classList.add('show');
-    });
-  });
-  document.querySelectorAll('.auth-overlay').forEach(overlay => {
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) window.closeAuthModals();
-    });
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') window.closeAuthModals();
+  document.querySelectorAll('.auth-open-signin').forEach(b => {
+    b.addEventListener('click', (e) => { e.preventDefault(); window.openAuthModal('login'); });
   });
 
-  // Mobile / Redirect Result Listener (Supports https://paddy-me.firebaseapp.com/__/auth/handler)
-  getRedirectResult(auth)
-    .then((result) => {
-      if (result?.user) {
-        window.closeAuthModals();
-      }
-    })
-    .catch((err) => {
-      console.warn("Redirect evaluation notice:", err);
-    });
+  // Mobile Redirect Catch
+  getRedirectResult(auth).catch(() => {});
 
-  // OAuth Handler (Google & GitHub with auto-redirect fallback if popups are blocked)
-  async function performOAuth(provider, errorBoxId) {
+  // Form Submissions (Real Email/Password Live Flow with Worldwide Country Prefix)
+  let isSubmitting = false;
+  byId('auth-main-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
     if (isSubmitting) return;
-    const errBox = byId(errorBoxId);
-    hideMessage(errBox);
+    clearAlerts();
+
+    const email = byId('auth-email').value.trim().toLowerCase();
+    const pass = byId('auth-pass').value;
+    const btn = byId('auth-submit-btn');
+
+    if (currentAuthMode === 'register') {
+      const fn = byId('auth-fn').value.trim();
+      const ln = byId('auth-ln').value.trim();
+      const confirm = byId('auth-pass-confirm').value;
+      const terms = byId('auth-terms').checked;
+
+      if (!terms) { showErr('Please agree to the Terms of Service and Privacy Policy.'); return; }
+      if (pass !== confirm) { showErr('Passwords do not match.'); return; }
+
+      isSubmitting = true;
+      btn.textContent = 'Registering…';
+      try {
+        const cred = await createUserWithEmailAndPassword(auth, email, pass);
+        const fullName = `${fn} ${ln}`.trim() || 'Team Trade';
+        try { await updateProfile(cred.user, { displayName: fullName }); } catch (pErr) {}
+        window.closeAuthModal();
+      } catch (err) {
+        showErr(friendlyAuthError(err));
+      } finally {
+        isSubmitting = false;
+        btn.textContent = 'Register Now';
+      }
+    } else {
+      isSubmitting = true;
+      btn.textContent = 'Signing in…';
+      try {
+        await signInWithEmailAndPassword(auth, email, pass);
+        window.closeAuthModal();
+      } catch (err) {
+        showErr(friendlyAuthError(err));
+      } finally {
+        isSubmitting = false;
+        btn.textContent = 'Sign In';
+      }
+    }
+  });
+
+  // Google OAuth Button
+  byId('google-direct-btn').addEventListener('click', async () => {
+    clearAlerts();
     try {
-      await signInWithPopup(auth, provider);
-      window.closeAuthModals();
+      await signInWithPopup(auth, googleProvider);
+      window.closeAuthModal();
     } catch (err) {
       if (err?.code === 'auth/popup-blocked') {
-        try {
-          await signInWithRedirect(auth, provider);
-          return;
-        } catch (redirectErr) {
-          showMessage(errBox, friendlyAuthError(redirectErr));
-          return;
-        }
+        try { await signInWithRedirect(auth, googleProvider); return; } catch (rErr) { showErr(friendlyAuthError(rErr)); }
       }
-      showMessage(errBox, friendlyAuthError(err));
-    }
-  }
-
-  byId('google-signup-btn')?.addEventListener('click', () => performOAuth(googleProvider, 'signup-error'));
-  byId('google-signin-btn')?.addEventListener('click', () => performOAuth(googleProvider, 'signin-error'));
-  byId('github-signup-btn')?.addEventListener('click', () => performOAuth(githubProvider, 'signup-error'));
-  byId('github-signin-btn')?.addEventListener('click', () => performOAuth(githubProvider, 'signin-error'));
-
-  // Registration Handler (Email/Password)
-  byId('signup-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-
-    const btn = byId('signup-btn-submit');
-    const name = byId('signup-name').value.trim();
-    const email = byId('signup-email').value.trim().toLowerCase();
-    const password = byId('signup-password').value;
-    const errBox = byId('signup-error');
-    hideMessage(errBox);
-
-    if (name.length < 2) {
-      showMessage(errBox, 'Please enter your full name (at least 2 characters).');
-      return;
-    }
-    if (password.length < 6) {
-      showMessage(errBox, 'Password must be at least 6 characters.');
-      return;
-    }
-
-    setBusy(btn, true, 'Creating Account…');
-    try {
-      const cred = await createUserWithEmailAndPassword(auth, email, password);
-      try {
-        await updateProfile(cred.user, { displayName: name });
-      } catch (pErr) {
-        console.warn("Name profile deferred:", pErr);
-      }
-      try {
-        await sendEmailVerification(cred.user);
-      } catch (vErr) {
-        console.warn("Verification email notice:", vErr);
-      }
-
-      byId('signup-form').reset();
-      window.closeAuthModals();
-    } catch (err) {
-      showMessage(errBox, friendlyAuthError(err));
-    } finally {
-      setBusy(btn, false);
+      showErr(friendlyAuthError(err));
     }
   });
 
-  // Sign In Handler (Email/Password)
-  byId('signin-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-
-    const btn = byId('signin-btn-submit');
-    const email = byId('signin-email').value.trim().toLowerCase();
-    const password = byId('signin-password').value;
-    const errBox = byId('signin-error');
-    hideMessage(errBox);
-
-    setBusy(btn, true, 'Signing In…');
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      byId('signin-form').reset();
-      window.closeAuthModals();
-    } catch (err) {
-      showMessage(errBox, friendlyAuthError(err));
-    } finally {
-      setBusy(btn, false);
-    }
-  });
-
-  // Password Reset
-  byId('forgot-password-link').addEventListener('click', async (e) => {
-    e.preventDefault();
-    const email = byId('signin-email').value.trim().toLowerCase();
-    const errBox = byId('signin-error');
-    const okBox = byId('signin-success');
-    hideMessage(errBox);
-    hideMessage(okBox);
-
-    if (!email) {
-      showMessage(errBox, 'Enter your email address above first, then click Reset Password.');
-      byId('signin-email').focus();
-      return;
-    }
-    try {
-      await sendPasswordResetEmail(auth, email);
-      showMessage(okBox, `Reset instructions dispatched to ${email}. Check your inbox and spam folder.`);
-    } catch (err) {
-      showMessage(errBox, friendlyAuthError(err));
-    }
-  });
-
-  // Instant Auth State Observer (Swaps UI immediately upon Firebase token validation)
+  // Instant Auth State Observer (Swaps Views Immediately upon Live Token Validation)
   onAuthStateChanged(auth, (user) => {
     const landing = byId('landing-root');
     const dashboard = byId('dashboard-view');
@@ -1569,54 +2518,27 @@ h1 span,.accent{color:#e9a300}
       dashboard.classList.add('show');
       window.scrollTo(0, 0);
 
-      const name = user.displayName || (user.email ? user.email.split('@')[0] : 'Member');
+      const name = user.displayName || user.email?.split('@')[0] || 'Team Trade';
       byId('dash-username').textContent = name;
-      byId('dash-name-display').textContent = name;
-      byId('dash-email').textContent = user.email || '';
-      byId('dash-email-row').textContent = user.email || 'None';
-
-      // Secure Avatar Binding with strict HTTPS Protocol Guard
-      const avatarImg = byId('dash-avatar-img');
-      const avatarFallback = byId('dash-avatar-fallback');
-      if (user.photoURL && user.photoURL.startsWith('https://')) {
-        avatarImg.src = user.photoURL;
-        avatarImg.style.display = 'block';
-        avatarFallback.style.display = 'none';
-      } else {
-        avatarImg.style.display = 'none';
-        avatarFallback.style.display = 'grid';
-        avatarFallback.textContent = name.charAt(0).toUpperCase();
-      }
-
-      byId('dash-uid').textContent = user.uid;
-      byId('dash-provider').textContent = user.providerData?.[0]?.providerId || 'password';
-      byId('dash-verified').textContent = user.emailVerified ? 'Yes (Verified)' : 'Pending verification';
+      byId('dash-user-display').textContent = name;
+      byId('dash-user-role').textContent = user.email || 'Merchant';
+      byId('dash-avatar-circle').textContent = name.charAt(0).toUpperCase();
     } else {
       dashboard.classList.remove('show');
       landing.style.display = '';
     }
-  }, (err) => {
-    console.error("Auth state observer error:", err);
-    const box = byId('setup-message');
-    if (box) showMessage(box, friendlyAuthError(err));
   });
 
+  // Dynamic Year & Reveal Animations
   byId('year').textContent = new Date().getFullYear();
-
   function initObserver() {
     const items = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      items.forEach(el => el.classList.add('in-view'));
-      return;
-    }
+    if (!('IntersectionObserver' in window)) { items.forEach(el => el.classList.add('in-view')); return; }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.12 });
     items.forEach(el => observer.observe(el));
   }
   initObserver();
